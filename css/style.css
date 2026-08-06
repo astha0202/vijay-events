@@ -1,0 +1,4475 @@
+/* ==========================================================
+   GOOGLE FONTS
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+
+:root{
+
+    --black:#090909;
+    --black2:#111111;
+    --gold:#D4AF37;
+    --white:#ffffff;
+    --grey:#bcbcbc;
+    --light:#f5f5f5;
+
+    --transition:.4s ease;
+
+    --shadow:
+    0 20px 60px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--black);
+
+    color:var(--white);
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+section{
+
+    padding:120px 8%;
+
+}
+
+.container{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+
+    border-radius:20px;
+
+}
+
+/* ==========================================================
+   LOADER
+========================================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-content h1{
+
+    font-size:58px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:var(--gold);
+
+    letter-spacing:5px;
+
+}
+
+.loader-content span{
+
+    color:#aaa;
+
+    display:block;
+
+    margin-top:15px;
+
+}
+
+.loader-line{
+
+    width:300px;
+
+    height:4px;
+
+    background:#222;
+
+    margin-top:35px;
+
+    overflow:hidden;
+
+}
+
+.loader-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:var(--gold);
+
+    animation:loading 3s linear forwards;
+
+}
+
+@keyframes loading{
+
+    100%{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+header{
+
+    position:fixed;
+
+    width:100%;
+
+    top:0;
+
+    left:0;
+
+    z-index:1000;
+
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:24px 8%;
+
+    transition:.4s;
+
+}
+
+.logo h2{
+
+    color:var(--gold);
+
+    font-size:38px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-weight:700;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:45px;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--gold);
+
+}
+
+.book-btn{
+
+    padding:14px 34px;
+
+    background:var(--gold);
+
+    color:#111;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+.book-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(212,175,55,.4);
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+
+    position:relative;
+
+    height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+.hero video{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.75)
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    max-width:900px;
+
+}
+
+.tagline{
+
+    color:var(--gold);
+
+    letter-spacing:6px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-content h1{
+
+    font-size:88px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    line-height:1.1;
+
+}
+
+.hero-content h1 span{
+
+    color:var(--gold);
+
+}
+
+.hero-content p{
+
+    margin:35px auto;
+
+    color:#ddd;
+
+    line-height:2;
+
+    max-width:700px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+.primary-btn{
+
+    background:var(--gold);
+
+    color:#111;
+
+    padding:16px 38px;
+
+    border-radius:50px;
+
+    transition:.4s;
+
+}
+
+.secondary-btn{
+
+    border:1px solid white;
+
+    color:white;
+
+    padding:16px 38px;
+
+    border-radius:50px;
+
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+
+    transform:translateY(-6px);
+
+}
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:80px;
+
+}
+
+.section-title span{
+
+    color:var(--gold);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.section-title h2{
+
+    margin-top:18px;
+
+    font-size:56px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+.section-title p{
+
+    width:700px;
+
+    max-width:100%;
+
+    margin:25px auto 0;
+
+    color:#c7c7c7;
+
+    line-height:1.9;
+
+}
+
+/* ==========================================================
+   ABOUT
+========================================================== */
+
+.about{
+
+    background:#0b0b0b;
+
+}
+
+.about .container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.about-image{
+
+    position:relative;
+
+}
+
+.about-image img{
+
+    border-radius:18px;
+
+    transition:.5s;
+
+}
+
+.about-image:hover img{
+
+    transform:scale(1.03);
+
+}
+
+.experience-box{
+
+    position:absolute;
+
+    bottom:30px;
+
+    right:-40px;
+
+    width:180px;
+
+    padding:30px;
+
+    background:rgba(212,175,55,.95);
+
+    color:#111;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.experience-box h2{
+
+    font-size:42px;
+
+    margin-bottom:5px;
+
+}
+
+.about-content h2{
+
+    font-size:60px;
+
+    line-height:1.2;
+
+    margin:18px 0 30px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.about-content h2 span{
+
+    color:var(--gold);
+
+}
+
+.about-content p{
+
+    color:#cfcfcf;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+.about-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin:35px 0;
+
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.feature i{
+
+    color:var(--gold);
+
+    font-size:18px;
+
+}
+
+/* ==========================================================
+   WHY US
+========================================================== */
+
+.why-us{
+
+    background:#090909;
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.why-card{
+
+    background:#141414;
+
+    padding:45px 35px;
+
+    border-radius:20px;
+
+    transition:.45s;
+
+    border:1px solid rgba(255,255,255,.06);
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--gold);
+
+    box-shadow:0 20px 60px rgba(212,175,55,.12);
+
+}
+
+.why-card i{
+
+    font-size:42px;
+
+    color:var(--gold);
+
+    margin-bottom:28px;
+
+}
+
+.why-card h3{
+
+    font-size:26px;
+
+    margin-bottom:15px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.why-card p{
+
+    color:#bfbfbf;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   SERVICES
+========================================================== */
+
+.services{
+
+    background:#0d0d0d;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.service-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    background:#161616;
+
+    transition:.45s;
+
+}
+
+.service-card img{
+
+    height:280px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.service-card:hover img{
+
+    transform:scale(1.1);
+
+}
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.85)
+
+    );
+
+    z-index:1;
+
+}
+
+.service-content{
+
+    position:absolute;
+
+    left:30px;
+
+    right:30px;
+
+    bottom:25px;
+
+    z-index:2;
+
+}
+
+.service-content i{
+
+    color:var(--gold);
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+.service-content h3{
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.service-content p{
+
+    color:#d9d9d9;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 70px rgba(212,175,55,.15);
+
+}
+
+/* ==========================================================
+   STATS
+========================================================== */
+
+.stats{
+
+    background:#101010;
+
+    padding:90px 8%;
+
+}
+
+.stats .container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.stat-card{
+
+    text-align:center;
+
+    padding:45px;
+
+    border-radius:18px;
+
+    background:#181818;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.4s;
+
+}
+
+.stat-card:hover{
+
+    border-color:var(--gold);
+
+    transform:translateY(-8px);
+
+}
+
+.stat-card h2{
+
+    font-size:54px;
+
+    color:var(--gold);
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.stat-card p{
+
+    margin-top:15px;
+
+    color:#d0d0d0;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.primary-btn{
+
+    display:inline-block;
+
+    background:var(--gold);
+
+    color:#111;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(212,175,55,.35);
+
+}
+
+.secondary-btn{
+
+    display:inline-block;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    color:#fff;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    transition:.4s;
+
+}
+
+.secondary-btn:hover{
+
+    background:#fff;
+
+    color:#111;
+
+}
+/* ==========================================================
+   FEATURED WEDDINGS
+========================================================== */
+
+.featured-weddings{
+
+    background:#070707;
+
+}
+
+.wedding-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.wedding-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    height:650px;
+
+    cursor:pointer;
+
+}
+
+.wedding-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.8s;
+
+}
+
+.wedding-card:hover img{
+
+    transform:scale(1.12);
+
+}
+
+.wedding-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+    transparent,
+
+    rgba(0,0,0,.9)
+
+    );
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    flex-direction:column;
+
+    padding:40px;
+
+}
+
+.wedding-overlay span{
+
+    color:var(--gold);
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+
+}
+
+.wedding-overlay h3{
+
+    font-size:40px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin-bottom:20px;
+
+}
+
+.wedding-overlay a{
+
+    color:white;
+
+    width:max-content;
+
+    border-bottom:1px solid var(--gold);
+
+    padding-bottom:6px;
+
+}
+
+/* ==========================================================
+   RENTALS
+========================================================== */
+
+.rentals{
+
+    background:#0b0b0b;
+
+}
+
+.rental-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.rental-card{
+
+    background:#151515;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.rental-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--gold);
+
+}
+
+.rental-card img{
+
+    height:260px;
+
+    object-fit:cover;
+
+}
+
+.rental-content{
+
+    padding:30px;
+
+}
+
+.rental-content h3{
+
+    font-size:32px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin-bottom:15px;
+
+}
+
+.rental-content p{
+
+    color:var(--gold);
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.rental-content a{
+
+    display:inline-block;
+
+    background:var(--gold);
+
+    color:#111;
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+}
+
+/* ==========================================================
+   GALLERY
+========================================================== */
+
+.gallery{
+
+    background:#090909;
+
+}
+
+.gallery-grid{
+
+    columns:4;
+
+    column-gap:18px;
+
+}
+
+.gallery-grid img{
+
+    width:100%;
+
+    margin-bottom:18px;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(.97);
+
+    filter:brightness(.75);
+
+}
+
+/* ==========================================================
+   VIDEO
+========================================================== */
+
+.video-showcase{
+
+    position:relative;
+
+    height:90vh;
+
+    overflow:hidden;
+
+}
+
+.video-showcase video{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.video-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.video-overlay h2{
+
+    font-size:75px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin-bottom:25px;
+
+}
+
+.video-overlay p{
+
+    color:#ddd;
+
+    margin-bottom:35px;
+
+    font-size:18px;
+
+}
+
+.video-overlay a{
+
+    background:var(--gold);
+
+    color:#111;
+
+    padding:18px 40px;
+
+    border-radius:40px;
+
+}
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.cta{
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.8),
+
+    rgba(0,0,0,.8)
+
+    ),
+
+    url("../images/cta.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.cta-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.cta-content span{
+
+    color:var(--gold);
+
+    letter-spacing:5px;
+
+}
+
+.cta-content h2{
+
+    margin:25px 0;
+
+    font-size:72px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.cta-content p{
+
+    color:#ddd;
+
+    line-height:2;
+
+    margin-bottom:40px;
+
+}
+
+/* ==========================================================
+   FLOATING BUTTONS
+========================================================== */
+
+.floating-icons{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    z-index:999;
+
+}
+
+.floating-icons a{
+
+    width:62px;
+
+    height:62px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--gold);
+
+    color:#111;
+
+    border-radius:50%;
+
+    font-size:22px;
+
+    transition:.4s;
+
+}
+
+.floating-icons a:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 45px rgba(212,175,55,.35);
+
+}
+
+/* ==========================================================
+   SCROLL INDICATOR
+========================================================== */
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    animation:scroll 2s infinite;
+
+}
+
+@keyframes scroll{
+
+    0%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,12px);
+
+    }
+
+    100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+}
+/* ==========================================================
+   LUXURY EXPERIENCE
+========================================================== */
+
+.luxury-experience{
+
+    background:#111;
+
+    overflow:hidden;
+
+}
+
+.luxury-experience .container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+.left-content h2{
+
+    font-size:70px;
+
+    line-height:1.2;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin:25px 0;
+
+}
+
+.left-content p{
+
+    color:#cfcfcf;
+
+    line-height:2;
+
+    margin-bottom:40px;
+
+}
+
+.right-images{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.right-images img{
+
+    border-radius:20px;
+
+    transition:.5s;
+
+}
+
+.right-images img:first-child{
+
+    grid-column:1/3;
+
+    height:400px;
+
+    object-fit:cover;
+
+}
+
+.right-images img:nth-child(2),
+
+.right-images img:nth-child(3){
+
+    height:240px;
+
+    object-fit:cover;
+
+}
+
+.right-images img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+   PROCESS
+========================================================== */
+
+.process{
+
+    background:#0a0a0a;
+
+}
+
+.process-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:35px;
+
+}
+
+.process-card{
+
+    background:#171717;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.process-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--gold);
+
+}
+
+.number{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:#111;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+.process-card h3{
+
+    font-size:30px;
+
+    margin-bottom:18px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.process-card p{
+
+    color:#ccc;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   TESTIMONIALS
+========================================================== */
+
+.testimonials{
+
+    background:#101010;
+
+}
+
+.testimonial-slider{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.testimonial-card{
+
+    background:#171717;
+
+    border-radius:22px;
+
+    padding:40px;
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.testimonial-card img{
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border:4px solid var(--gold);
+
+}
+
+.testimonial-card h3{
+
+    font-size:28px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.stars{
+
+    color:gold;
+
+    margin:15px 0;
+
+    letter-spacing:3px;
+
+}
+
+.testimonial-card p{
+
+    color:#d4d4d4;
+
+    line-height:1.9;
+
+}
+
+/* ==========================================================
+   COUNTER
+========================================================== */
+
+.counter{
+
+    background:#080808;
+
+}
+
+.counter .container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.counter-box{
+
+    text-align:center;
+
+    padding:45px;
+
+    background:#141414;
+
+    border-radius:18px;
+
+}
+
+.counter-box h2{
+
+    font-size:65px;
+
+    color:var(--gold);
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.counter-box span{
+
+    color:#d4d4d4;
+
+}
+
+/* ==========================================================
+   PACKAGES
+========================================================== */
+
+.packages{
+
+    background:#0d0d0d;
+
+}
+
+.package-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.package-card{
+
+    position:relative;
+
+    background:#161616;
+
+    border-radius:25px;
+
+    padding:45px;
+
+    text-align:center;
+
+    transition:.45s;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.package-card.active{
+
+    transform:scale(1.05);
+
+    border:2px solid var(--gold);
+
+}
+
+.package-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.package-name{
+
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+.package-card h2{
+
+    font-size:60px;
+
+    margin:30px 0;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.package-card ul{
+
+    margin-bottom:35px;
+
+}
+
+.package-card li{
+
+    margin:16px 0;
+
+    color:#d5d5d5;
+
+}
+
+.package-card a{
+
+    display:inline-block;
+
+    background:var(--gold);
+
+    color:#111;
+
+    padding:16px 35px;
+
+    border-radius:40px;
+
+}
+
+.popular{
+
+    position:absolute;
+
+    top:-15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:var(--gold);
+
+    color:#111;
+
+    padding:8px 20px;
+
+    border-radius:40px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+/* ==========================================================
+   FAQ
+========================================================== */
+
+.faq{
+
+    background:#0b0b0b;
+
+}
+
+.faq-container{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.faq-item{
+
+    margin-bottom:20px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    background:#141414;
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    background:none;
+
+    color:#fff;
+
+    border:none;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:28px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.faq-answer{
+
+    display:none;
+
+    padding:0 28px 28px;
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   BOOKING
+========================================================== */
+
+.booking{
+
+    background:#111;
+
+}
+
+.booking .container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.booking-left h2{
+
+    font-size:62px;
+
+    margin:20px 0;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.booking-left p{
+
+    color:#d0d0d0;
+
+    line-height:2;
+
+}
+
+.booking-right form{
+
+    background:#181818;
+
+    padding:45px;
+
+    border-radius:22px;
+
+}
+
+.booking-right input,
+.booking-right textarea,
+.booking-right select{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:20px;
+
+    background:#0e0e0e;
+
+    border:1px solid #222;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    outline:none;
+
+}
+
+.booking-right input:focus,
+.booking-right textarea:focus,
+.booking-right select:focus{
+
+    border-color:var(--gold);
+
+}
+
+.booking-right button{
+
+    width:100%;
+
+    background:var(--gold);
+
+    color:#111;
+
+    border:none;
+
+    padding:18px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================================
+   INSTAGRAM
+========================================================== */
+
+.instagram{
+
+    background:#090909;
+
+}
+
+.instagram-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:15px;
+
+}
+
+.instagram-grid img{
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.instagram-grid img:hover{
+
+    transform:scale(.95);
+
+}
+
+
+/* ==========================================================
+   MAP
+========================================================== */
+
+.map iframe{
+
+    width:100%;
+
+    height:550px;
+
+    border:none;
+
+    filter:grayscale(100%) invert(90%);
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer{
+
+    background:#050505;
+
+    padding:90px 8% 30px;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1.5fr;
+
+    gap:45px;
+
+}
+
+.footer-about h2{
+
+    color:var(--gold);
+
+    font-size:42px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin-bottom:20px;
+
+}
+
+.footer-about p{
+
+    color:#c9c9c9;
+
+    line-height:2;
+
+}
+
+footer h3{
+
+    margin-bottom:25px;
+
+}
+
+footer ul li{
+
+    margin:15px 0;
+
+}
+
+footer ul li a{
+
+    color:#cfcfcf;
+
+    transition:.3s;
+
+}
+
+footer ul li a:hover{
+
+    color:var(--gold);
+
+}
+
+.footer-bottom{
+
+    margin-top:70px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    padding-top:30px;
+
+    color:#9d9d9d;
+
+}
+
+
+/* ==========================================================
+   HOVER GLOW
+========================================================== */
+
+img{
+
+    transition:.5s;
+
+}
+
+img:hover{
+
+    filter:brightness(105%);
+
+}
+
+button,
+a{
+
+    transition:.4s;
+
+}
+
+button:hover,
+a:hover{
+
+    opacity:.95;
+
+}
+
+
+/* ==========================================================
+   TEXT SELECTION
+========================================================== */
+
+::selection{
+
+    background:var(--gold);
+
+    color:#111;
+
+}
+
+
+/* ==========================================================
+   ANIMATION UTILITIES
+========================================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-60px);
+
+}
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(60px);
+
+}
+
+.zoom{
+
+    opacity:0;
+
+    transform:scale(.8);
+
+}
+
+
+/* ==========================================================
+   SHADOW UTILITIES
+========================================================== */
+
+.shadow{
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.gold-shadow{
+
+    box-shadow:0 20px 60px rgba(212,175,55,.25);
+
+}
+
+
+/* ==========================================================
+   BORDER UTILITIES
+========================================================== */
+
+.border-gold{
+
+    border:1px solid var(--gold);
+
+}
+
+.round{
+
+    border-radius:20px;
+
+}
+
+
+/* ==========================================================
+   SPACING UTILITIES
+========================================================== */
+
+.mt-50{
+
+    margin-top:50px;
+
+}
+
+.mt-100{
+
+    margin-top:100px;
+
+}
+
+.mb-50{
+
+    margin-bottom:50px;
+
+}
+
+.mb-100{
+
+    margin-bottom:100px;
+
+}
+
+/* ==========================================================
+   PREMIUM GLASS EFFECT
+========================================================== */
+
+.glass{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ==========================================================
+   GOLDEN GRADIENT TEXT
+========================================================== */
+
+.gold-text{
+
+    background:linear-gradient(
+        90deg,
+        #fff6d5,
+        #D4AF37,
+        #fff6d5
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+/* ==========================================================
+   SECTION SUBTITLE
+========================================================== */
+
+.section-subtitle{
+
+    color:var(--gold);
+
+    text-transform:uppercase;
+
+    letter-spacing:6px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   GOLD BORDER
+========================================================== */
+
+.gold-border{
+
+    position:relative;
+
+}
+
+.gold-border::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-10px;
+
+    width:90px;
+
+    height:3px;
+
+    background:var(--gold);
+
+}
+
+/* ==========================================================
+   IMAGE HOVER
+========================================================== */
+
+.image-box{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+}
+
+.image-box img{
+
+    transition:.7s;
+
+}
+
+.image-box:hover img{
+
+    transform:scale(1.12) rotate(2deg);
+
+}
+
+/* ==========================================================
+   CARD GLOW
+========================================================== */
+
+.glow-card{
+
+    transition:.45s;
+
+}
+
+.glow-card:hover{
+
+    transform:translateY(-15px);
+
+    box-shadow:
+    0 30px 80px rgba(212,175,55,.18);
+
+}
+
+/* ==========================================================
+   GOLD BUTTON
+========================================================== */
+
+.gold-btn{
+
+    background:linear-gradient(
+        90deg,
+        #b8860b,
+        #D4AF37,
+        #e9c85c
+    );
+
+    color:#111;
+
+    padding:16px 38px;
+
+    border-radius:60px;
+
+    display:inline-block;
+
+    font-weight:600;
+
+    transition:.45s;
+
+}
+
+.gold-btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 15px 45px rgba(212,175,55,.35);
+
+}
+
+/* ==========================================================
+   DARK SECTION
+========================================================== */
+
+.dark-section{
+
+    background:#080808;
+
+}
+
+/* ==========================================================
+   LIGHT SECTION
+========================================================== */
+
+.light-section{
+
+    background:#111;
+
+}
+
+/* ==========================================================
+   LUXURY DIVIDER
+========================================================== */
+
+.divider{
+
+    width:120px;
+
+    height:2px;
+
+    background:var(--gold);
+
+    margin:30px auto;
+
+}
+
+/* ==========================================================
+   ICON BOX
+========================================================== */
+
+.icon-box{
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#191919;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    color:var(--gold);
+
+    font-size:28px;
+
+    transition:.4s;
+
+}
+
+.icon-box:hover{
+
+    background:var(--gold);
+
+    color:#111;
+
+}
+
+/* ==========================================================
+   GOLD SHADOW IMAGE
+========================================================== */
+
+.shadow-image{
+
+    border-radius:24px;
+
+    box-shadow:
+
+    0 20px 80px rgba(212,175,55,.12);
+
+}
+
+/* ==========================================================
+   BIG TITLE
+========================================================== */
+
+.big-title{
+
+    font-size:90px;
+
+    line-height:1;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+/* ==========================================================
+   SMALL TITLE
+========================================================== */
+
+.small-title{
+
+    font-size:22px;
+
+    color:#d2d2d2;
+
+}
+
+/* ==========================================================
+   CONTENT WIDTH
+========================================================== */
+
+.content{
+
+    max-width:700px;
+
+}
+
+/* ==========================================================
+   FLEX
+========================================================== */
+
+.flex{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.space-between{
+
+    justify-content:space-between;
+
+}
+
+.center{
+
+    justify-content:center;
+
+}
+
+.column{
+
+    flex-direction:column;
+
+}
+
+/* ==========================================================
+   GRID HELPERS
+========================================================== */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:50px;
+
+}
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.grid-4{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+/* ==========================================================
+   PREMIUM NAVBAR
+========================================================== */
+
+header{
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    background:rgba(0,0,0,.08);
+
+    transition:.45s;
+
+}
+
+header.scrolled{
+
+    background:rgba(0,0,0,.92);
+
+    border-bottom:1px solid rgba(212,175,55,.15);
+
+    box-shadow:0 10px 40px rgba(0,0,0,.45);
+
+}
+
+/* ==========================================================
+   HERO OVERLAY
+========================================================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,
+
+    rgba(212,175,55,.20),
+
+    transparent 45%),
+
+    radial-gradient(circle at bottom left,
+
+    rgba(255,255,255,.08),
+
+    transparent 40%);
+
+    z-index:1;
+
+}
+
+/* ==========================================================
+   GOLDEN LIGHT
+========================================================== */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        rgba(212,175,55,.12),
+
+        transparent 70%
+
+    );
+
+    top:-250px;
+
+    right:-250px;
+
+    filter:blur(40px);
+
+}
+
+/* ==========================================================
+   PREMIUM CARD
+========================================================== */
+
+.luxury-card{
+
+    position:relative;
+
+    background:#141414;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    border:1px solid rgba(255,255,255,.06);
+
+}
+
+.luxury-card:hover{
+
+    transform:translateY(-15px);
+
+    border-color:var(--gold);
+
+}
+
+.luxury-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+    130deg,
+
+    transparent,
+
+    rgba(212,175,55,.08),
+
+    transparent
+
+    );
+
+    transform:translateX(-120%);
+
+    transition:.8s;
+
+}
+
+.luxury-card:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+/* ==========================================================
+   PREMIUM BORDER
+========================================================== */
+
+.border-animation{
+
+    position:relative;
+
+}
+
+.border-animation::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:0;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
+
+    transition:.4s;
+
+}
+
+.border-animation:hover::after{
+
+    left:0;
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   GOLD BADGE
+========================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:var(--gold);
+
+    color:#111;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:13px;
+
+}
+
+/* ==========================================================
+   SECTION BACKGROUND LIGHT
+========================================================== */
+
+.section-light{
+
+    position:relative;
+
+}
+
+.section-light::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    background:
+
+    radial-gradient(
+
+    rgba(212,175,55,.12),
+
+    transparent
+
+    );
+
+    top:-120px;
+
+    left:-120px;
+
+    filter:blur(40px);
+
+}
+
+/* ==========================================================
+   FLOATING CIRCLES
+========================================================== */
+
+.circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(212,175,55,.08);
+
+    filter:blur(25px);
+
+}
+
+.circle.one{
+
+    width:220px;
+
+    height:220px;
+
+    top:100px;
+
+    left:-80px;
+
+}
+
+.circle.two{
+
+    width:300px;
+
+    height:300px;
+
+    bottom:-100px;
+
+    right:-120px;
+
+}
+
+/* ==========================================================
+   IMAGE SHINE
+========================================================== */
+
+.shine{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.shine::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.35),
+
+    transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.shine:hover::before{
+
+    left:150%;
+
+    transition:1s;
+
+}
+
+/* ==========================================================
+   PREMIUM INPUT
+========================================================== */
+
+input,
+textarea,
+select{
+
+    transition:.35s;
+
+}
+
+input:hover,
+textarea:hover,
+select:hover{
+
+    border-color:var(--gold);
+
+}
+
+/* ==========================================================
+   SOCIAL ICONS
+========================================================== */
+
+.social-icons{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.social-icons a{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#181818;
+
+    color:white;
+
+    transition:.4s;
+
+}
+
+.social-icons a:hover{
+
+    background:var(--gold);
+
+    color:#111;
+
+    transform:translateY(-8px);
+
+}
+
+/* ==========================================================
+   DECORATIVE LINE
+========================================================== */
+
+.line{
+
+    width:80px;
+
+    height:3px;
+
+    background:var(--gold);
+
+    margin:25px 0;
+
+}
+
+/* ==========================================================
+   GOLD BACKGROUND
+========================================================== */
+
+.gold-bg{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #b8860b,
+
+    #D4AF37,
+
+    #f3d469
+
+    );
+
+}
+
+/* ==========================================================
+   LUXURY SPACING
+========================================================== */
+
+.py-150{
+
+    padding:150px 0;
+
+}
+
+.py-200{
+
+    padding:200px 0;
+
+}
+/* ACTIVE NAV */
+
+.nav-links a.active{
+
+    color:var(--gold);
+
+}
+
+/* TOP BUTTON */
+
+.top-btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 40px rgba(212,175,55,.35);
+
+}
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+.progress-bar{
+
+position:fixed;
+top:0;
+left:0;
+height:3px;
+width:0;
+background:#D4AF37;
+z-index:999999;
+
+}
+
+/* ==========================================
+   CURSOR
+========================================== */
+
+.cursor{
+
+position:fixed;
+width:18px;
+height:18px;
+border:2px solid #D4AF37;
+border-radius:50%;
+pointer-events:none;
+transform:translate(-50%,-50%);
+transition:.15s;
+z-index:999999;
+
+}
+
+.cursor.active{
+
+width:42px;
+height:42px;
+background:rgba(212,175,55,.15);
+
+}
+
+/* ==========================================
+   RIPPLE
+========================================== */
+
+button,
+.primary-btn{
+
+position:relative;
+overflow:hidden;
+
+}
+
+.ripple{
+
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,.35);
+transform:scale(0);
+animation:ripple .6s linear;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+opacity:0;
+
+}
+
+}
+/* ==========================================================
+   PREMIUM SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        #8f6b12,
+        #D4AF37,
+        #f3d97b
+    );
+
+    border-radius:30px;
+
+}
+
+/* ==========================================================
+   PREMIUM SELECTION
+========================================================== */
+
+::selection{
+
+    background:#D4AF37;
+    color:#000;
+
+}
+
+/* ==========================================================
+   SECTION HOVER LIGHT
+========================================================== */
+
+section{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.04);
+
+    filter:blur(80px);
+
+    top:-150px;
+
+    right:-150px;
+
+}
+
+/* ==========================================================
+   PREMIUM IMAGE FRAME
+========================================================== */
+
+.image-frame{
+
+    padding:12px;
+
+    background:#111;
+
+    border:1px solid rgba(212,175,55,.2);
+
+    border-radius:24px;
+
+}
+
+.image-frame img{
+
+    border-radius:18px;
+
+}
+
+/* ==========================================================
+   LUXURY BADGE
+========================================================== */
+
+.luxury-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(212,175,55,.3);
+
+    border-radius:50px;
+
+    color:#D4AF37;
+
+    backdrop-filter:blur(12px);
+
+}
+
+/* ==========================================================
+   PREMIUM TABLE
+========================================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+table th{
+
+    background:#181818;
+
+    color:#D4AF37;
+
+    padding:18px;
+
+}
+
+table td{
+
+    padding:18px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+/* ==========================================================
+   PREMIUM PRICE
+========================================================== */
+
+.price{
+
+    font-size:46px;
+
+    color:#D4AF37;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+/* ==========================================================
+   TAGS
+========================================================== */
+
+.tag{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    background:#1a1a1a;
+
+    color:#fff;
+
+    border-radius:30px;
+
+    margin:5px;
+
+    transition:.3s;
+
+}
+
+.tag:hover{
+
+    background:#D4AF37;
+
+    color:#111;
+
+}
+
+/* ==========================================================
+   GLOW BORDER
+========================================================== */
+
+.glow-border{
+
+    border:1px solid rgba(212,175,55,.2);
+
+    transition:.4s;
+
+}
+
+.glow-border:hover{
+
+    box-shadow:
+
+    0 0 25px rgba(212,175,55,.25);
+
+}
+
+/* ==========================================================
+   PREMIUM HR
+========================================================== */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:rgba(212,175,55,.15);
+
+    margin:60px 0;
+
+}
+/* ==========================================================
+   PREMIUM SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        #8f6b12,
+        #D4AF37,
+        #f3d97b
+    );
+
+    border-radius:30px;
+
+}
+
+/* ==========================================================
+   PREMIUM SELECTION
+========================================================== */
+
+::selection{
+
+    background:#D4AF37;
+    color:#000;
+
+}
+
+/* ==========================================================
+   SECTION HOVER LIGHT
+========================================================== */
+
+section{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.04);
+
+    filter:blur(80px);
+
+    top:-150px;
+
+    right:-150px;
+
+}
+
+/* ==========================================================
+   PREMIUM IMAGE FRAME
+========================================================== */
+
+.image-frame{
+
+    padding:12px;
+
+    background:#111;
+
+    border:1px solid rgba(212,175,55,.2);
+
+    border-radius:24px;
+
+}
+
+.image-frame img{
+
+    border-radius:18px;
+
+}
+
+/* ==========================================================
+   LUXURY BADGE
+========================================================== */
+
+.luxury-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(212,175,55,.3);
+
+    border-radius:50px;
+
+    color:#D4AF37;
+
+    backdrop-filter:blur(12px);
+
+}
+
+/* ==========================================================
+   PREMIUM TABLE
+========================================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+table th{
+
+    background:#181818;
+
+    color:#D4AF37;
+
+    padding:18px;
+
+}
+
+table td{
+
+    padding:18px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+/* ==========================================================
+   PREMIUM PRICE
+========================================================== */
+
+.price{
+
+    font-size:46px;
+
+    color:#D4AF37;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+/* ==========================================================
+   TAGS
+========================================================== */
+
+.tag{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    background:#1a1a1a;
+
+    color:#fff;
+
+    border-radius:30px;
+
+    margin:5px;
+
+    transition:.3s;
+
+}
+
+.tag:hover{
+
+    background:#D4AF37;
+
+    color:#111;
+
+}
+
+/* ==========================================================
+   GLOW BORDER
+========================================================== */
+
+.glow-border{
+
+    border:1px solid rgba(212,175,55,.2);
+
+    transition:.4s;
+
+}
+
+.glow-border:hover{
+
+    box-shadow:
+
+    0 0 25px rgba(212,175,55,.25);
+
+}
+
+/* ==========================================================
+   PREMIUM HR
+========================================================== */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:rgba(212,175,55,.15);
+
+    margin:60px 0;
+
+}
+/* ==========================================================
+   PREMIUM NAV LINK UNDERLINE
+========================================================== */
+
+.nav-links a{
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
+
+    transition:.4s;
+
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   PREMIUM BUTTON HOVER
+========================================================== */
+
+.primary-btn,
+.gold-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-btn::before,
+.gold-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.4),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+.primary-btn:hover::before,
+.gold-btn:hover::before{
+
+    left:160%;
+
+}
+
+/* ==========================================================
+   IMAGE OVERLAY
+========================================================== */
+
+.image-overlay{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.image-overlay::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.image-overlay:hover::after{
+
+    background:rgba(0,0,0,.35);
+
+}
+
+/* ==========================================================
+   PREMIUM CARD TITLE
+========================================================== */
+
+.card-title{
+
+    font-size:34px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin-bottom:18px;
+
+}
+
+.card-desc{
+
+    color:#d0d0d0;
+
+    line-height:1.9;
+
+}
+
+/* ==========================================================
+   PREMIUM SECTION PADDING
+========================================================== */
+
+.py-120{
+
+    padding:120px 0;
+
+}
+
+.py-160{
+
+    padding:160px 0;
+
+}
+
+/* ==========================================================
+   GOLD DOTS
+========================================================== */
+
+.gold-dots{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.gold-dots span{
+
+    width:8px;
+
+    height:8px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+}
+
+/* ==========================================================
+   PREMIUM BACKGROUND
+========================================================== */
+
+.luxury-bg{
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(212,175,55,.08),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(212,175,55,.08),
+    transparent 35%),
+
+    #0b0b0b;
+
+}
+.logo img{
+
+    height:70px;
+
+    width:auto;
+
+    object-fit:contain;
+
+    transition:.4s;
+
+}
+
+.logo img:hover{
+
+    transform:scale(1.05);
+
+}
+/* ==========================================================
+   END
+========================================================== */
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    position:relative;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.45),
+
+    rgba(0,0,0,.60)
+
+    ),
+
+    url("../images/hero/hero-bg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    transparent 35%,
+
+    rgba(0,0,0,.25)
+
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:900px;
+
+    max-width:90%;
+
+}
+
+.tagline{
+
+    color:#D4AF37;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:95px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    line-height:1.05;
+
+    color:white;
+
+    margin-bottom:30px;
+
+}
+
+.hero h1 span{
+
+    color:#D4AF37;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    color:#f1f1f1;
+
+    line-height:2;
+
+    width:720px;
+
+    max-width:100%;
+
+    margin:auto;
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.primary-btn{
+
+    padding:18px 42px;
+
+}
+
+.secondary-btn{
+
+    padding:18px 42px;
+
+}
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:220px;
+
+    background:linear-gradient(
+
+        transparent,
+
+        #ffffff
+
+    );
+
+}
+header{
+
+    position:fixed;
+
+    width:100%;
+
+    background:rgba(0,0,0,.18);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+/*================ HERO =================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        rgba(0,0,0,.45),
+
+        rgba(0,0,0,.55)
+
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:100;
+
+    text-align:center;
+
+    max-width:900px;
+
+    padding:20px;
+
+}
+
+.hero-tag{
+
+    display:block;
+
+    color:#d4af37;
+
+    letter-spacing:10px;
+
+    text-transform:uppercase;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+    font-weight:500;
+
+}
+
+.hero-content h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:110px;
+
+    color:#fff;
+
+    line-height:1;
+
+    margin-bottom:25px;
+
+    text-shadow:
+
+    0 8px 35px rgba(0,0,0,.45);
+
+}
+
+.hero-content p{
+
+    font-size:24px;
+
+    color:#f4f4f4;
+
+    letter-spacing:2px;
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.primary-btn{
+
+    background:#d4af37;
+
+    color:#111;
+
+    padding:18px 42px;
+
+    border-radius:6px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    transition:.4s;
+
+}
+
+.primary-btn:hover{
+
+    background:#e4bf48;
+
+    transform:translateY(-5px);
+
+}
+
+.secondary-btn{
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+    padding:18px 42px;
+
+    border-radius:6px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    transition:.4s;
+
+}
+
+.secondary-btn:hover{
+
+    background:#fff;
+
+    color:#111;
+
+}
+
+/* Bottom Fade */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:220px;
+
+    background:linear-gradient(
+
+        transparent,
+
+        #ffffff
+
+    );
+
+}
+/*================ HERO STATS =================*/
+
+.hero-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:70px;
+
+    margin-top:80px;
+
+}
+
+.hero-stats div{
+
+    text-align:center;
+
+}
+
+.hero-stats h2{
+
+    font-size:42px;
+
+    color:#D4AF37;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.hero-stats span{
+
+    color:#fff;
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+}
+
+
+/*================ SCROLL INDICATOR =================*/
+
+.scroll-indicator{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:40px;
+
+    transform:translateX(-50%);
+
+    width:34px;
+
+    height:55px;
+
+    border:2px solid rgba(255,255,255,.5);
+
+    border-radius:40px;
+
+}
+
+.scroll-indicator span{
+
+    position:absolute;
+
+    left:50%;
+
+    top:10px;
+
+    transform:translateX(-50%);
+
+    width:6px;
+
+    height:12px;
+
+    border-radius:20px;
+
+    background:#D4AF37;
+
+    animation:scrollMouse 2s infinite;
+
+}
+
+@keyframes scrollMouse{
+
+    0%{
+
+        opacity:1;
+
+        top:10px;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        top:30px;
+
+    }
+
+}
+.hero-content h1{
+
+    text-shadow:
+
+    0 5px 15px rgba(0,0,0,.4),
+
+    0 20px 60px rgba(0,0,0,.5);
+
+}
+header{
+
+    position:fixed;
+
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(10,10,10,.18);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+/*================ ABOUT HERO =================*/
+
+.about-hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.about-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.about-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        rgba(0,0,0,.55),
+
+        rgba(0,0,0,.65)
+
+    );
+
+}
+
+.about-hero .hero-content{
+
+    position:relative;
+
+    z-index:100;
+
+    max-width:900px;
+
+    padding:20px;
+
+}
+
+.about-hero span{
+
+    color:#D4AF37;
+
+    text-transform:uppercase;
+
+    letter-spacing:6px;
+
+    font-size:15px;
+
+}
+
+.about-hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:#fff;
+
+    font-size:90px;
+
+    line-height:1.05;
+
+    margin:25px 0;
+
+}
+
+.about-hero p{
+
+    color:#f5f5f5;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+.about-video{
+
+    filter:
+
+    brightness(.55)
+
+    saturate(1.1)
+
+    contrast(1.05);
+
+}

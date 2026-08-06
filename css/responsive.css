@@ -1,0 +1,420 @@
+/* ==========================================
+   LARGE LAPTOP
+========================================== */
+
+@media(max-width:1400px){
+
+.container{
+
+    width:92%;
+
+}
+
+.hero-content h1{
+
+    font-size:72px;
+
+}
+
+.section-title h2{
+
+    font-size:48px;
+
+}
+
+.about-content h2{
+
+    font-size:50px;
+
+}
+
+.left-content h2{
+
+    font-size:55px;
+
+}
+
+}
+
+
+/* ==========================================
+   LAPTOP
+========================================== */
+
+@media(max-width:1200px){
+
+.nav-links{
+
+    gap:25px;
+
+}
+
+.hero-content h1{
+
+    font-size:62px;
+
+}
+
+.hero-content p{
+
+    width:90%;
+
+}
+
+.services-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.why-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.stats .container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.counter .container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.process-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.package-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+section{
+
+    padding:90px 6%;
+
+}
+
+.nav-links{
+
+    display:none;
+
+}
+
+.menu-btn{
+
+    display:block;
+
+    font-size:28px;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+.hero{
+
+    text-align:center;
+
+}
+
+.hero-content h1{
+
+    font-size:56px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.about .container{
+
+    grid-template-columns:1fr;
+
+}
+
+.luxury-experience .container{
+
+    grid-template-columns:1fr;
+
+}
+
+.booking .container{
+
+    grid-template-columns:1fr;
+
+}
+
+.wedding-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.rental-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.gallery-grid{
+
+    columns:2;
+
+}
+
+.instagram-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.video-overlay h2{
+
+    font-size:48px;
+
+}
+
+.big-title{
+
+    font-size:60px;
+
+}
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.navbar{
+
+    padding:20px 5%;
+
+}
+
+.logo h2{
+
+    font-size:30px;
+
+}
+
+.hero-content h1{
+
+    font-size:42px;
+
+}
+
+.hero-content p{
+
+    font-size:15px;
+
+}
+
+.section-title h2{
+
+    font-size:38px;
+
+}
+
+.about-content h2{
+
+    font-size:40px;
+
+}
+
+.left-content h2{
+
+    font-size:42px;
+
+}
+
+.package-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.services-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.why-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.process-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.stats .container{
+
+    grid-template-columns:1fr;
+
+}
+
+.counter .container{
+
+    grid-template-columns:1fr;
+
+}
+
+.rental-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.instagram-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.gallery-grid{
+
+    columns:1;
+
+}
+
+.video-overlay h2{
+
+    font-size:34px;
+
+}
+
+.booking-left{
+
+    text-align:center;
+
+}
+
+.booking-left h2{
+
+    font-size:36px;
+
+}
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+.hero{
+
+    height:90vh;
+
+}
+
+.hero-content h1{
+
+    font-size:34px;
+
+}
+
+.tagline{
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.hero-buttons{
+
+    width:100%;
+
+}
+
+.hero-buttons a{
+
+    width:100%;
+
+}
+
+.section-title h2{
+
+    font-size:30px;
+
+}
+
+.about-features{
+
+    grid-template-columns:1fr;
+
+}
+
+.floating-icons{
+
+    right:15px;
+
+    bottom:20px;
+
+}
+
+.floating-icons a{
+
+    width:52px;
+
+    height:52px;
+
+}
+
+}

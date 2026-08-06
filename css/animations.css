@@ -1,0 +1,747 @@
+/* ==========================================
+   FADE UP
+========================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================
+   FADE LEFT
+========================================== */
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-80px);
+
+    transition:1s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.fade-left.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/* ==========================================
+   FADE RIGHT
+========================================== */
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(80px);
+
+    transition:1s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.fade-right.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/* ==========================================
+   ZOOM
+========================================== */
+
+.zoom{
+
+    opacity:0;
+
+    transform:scale(.8);
+
+    transition:1s;
+
+}
+
+.zoom.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* ==========================================
+   FLOAT
+========================================== */
+
+.float{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+}
+
+/* ==========================================
+   GOLD GLOW
+========================================== */
+
+.gold-glow{
+
+    animation:goldGlow 3s infinite alternate;
+
+}
+
+@keyframes goldGlow{
+
+from{
+
+box-shadow:0 0 10px rgba(212,175,55,.2);
+
+}
+
+to{
+
+box-shadow:0 0 45px rgba(212,175,55,.5);
+
+}
+
+}
+
+/* ==========================================
+   TEXT SHINE
+========================================== */
+
+.shine-text{
+
+background:linear-gradient(
+90deg,
+#fff,
+#D4AF37,
+#fff
+);
+
+background-size:200%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:shineText 4s linear infinite;
+
+}
+
+@keyframes shineText{
+
+100%{
+
+background-position:200%;
+
+}
+
+}
+/* ==========================================
+   HERO TITLE REVEAL
+========================================== */
+
+.hero-content h1{
+
+    overflow:hidden;
+
+}
+
+.hero-content h1 span{
+
+    display:inline-block;
+
+    animation:titleReveal 1.5s ease forwards;
+
+}
+
+@keyframes titleReveal{
+
+    0%{
+
+        transform:translateY(120px);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   HERO SUBTITLE
+========================================== */
+
+.tagline{
+
+    animation:fadeDown 1.2s ease forwards;
+
+}
+
+@keyframes fadeDown{
+
+    from{
+
+        transform:translateY(-30px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   BUTTON POP
+========================================== */
+
+.primary-btn{
+
+    animation:buttonPop 1.4s ease;
+
+}
+
+@keyframes buttonPop{
+
+    0%{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   IMAGE REVEAL
+========================================== */
+
+.image-reveal{
+
+    overflow:hidden;
+
+}
+
+.image-reveal img{
+
+    transform:scale(1.2);
+
+    transition:1.2s;
+
+}
+
+.image-reveal.show img{
+
+    transform:scale(1);
+
+}
+
+/* ==========================================
+   CARD HOVER
+========================================== */
+
+.service-card,
+.wedding-card,
+.rental-card{
+
+    will-change:transform;
+
+    transition:
+
+    transform .45s,
+
+    box-shadow .45s;
+
+}
+
+.service-card:hover,
+.wedding-card:hover,
+.rental-card:hover{
+
+    transform:translateY(-14px);
+
+    box-shadow:
+
+    0 35px 80px rgba(0,0,0,.45);
+
+}
+
+/* ==========================================
+   GOLD LINE
+========================================== */
+
+.gold-line{
+
+    position:relative;
+
+}
+
+.gold-line::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#D4AF37;
+
+    transition:.5s;
+
+}
+
+.gold-line:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   PREMIUM LOADER LOGO
+========================================== */
+
+.loader-content h1{
+
+    animation:loaderLogo 2s ease infinite alternate;
+
+}
+
+@keyframes loaderLogo{
+
+    from{
+
+        letter-spacing:3px;
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        letter-spacing:10px;
+
+        transform:scale(1.05);
+
+    }
+
+}
+
+/* ==========================================
+   PARTICLE
+========================================== */
+
+.particle{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#D4AF37;
+
+    opacity:.5;
+
+    animation:particleFloat 8s linear infinite;
+
+}
+
+@keyframes particleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-100vh);
+
+    }
+
+}
+
+/* ==========================================
+   ICON BOUNCE
+========================================== */
+
+.icon-box:hover i{
+
+    animation:bounce .6s;
+
+}
+
+@keyframes bounce{
+
+    0%{transform:translateY(0);}
+    30%{transform:translateY(-10px);}
+    60%{transform:translateY(5px);}
+    100%{transform:translateY(0);}
+
+}
+/* ==========================================
+   LUXURY BACKGROUND ROTATION
+========================================== */
+
+.hero::before{
+
+    animation:heroGlow 10s linear infinite alternate;
+
+}
+
+@keyframes heroGlow{
+
+    from{
+
+        transform:scale(1);
+
+        opacity:.35;
+
+    }
+
+    to{
+
+        transform:scale(1.25);
+
+        opacity:.7;
+
+    }
+
+}
+
+/* ==========================================
+   GOLDEN BORDER ANIMATION
+========================================== */
+
+.animated-border{
+
+    position:relative;
+
+}
+
+.animated-border::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:2px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #D4AF37,
+        transparent
+    );
+
+    background-size:200%;
+
+    animation:borderRun 4s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+}
+
+@keyframes borderRun{
+
+    to{
+
+        background-position:200%;
+
+    }
+
+}
+
+/* ==========================================
+   HERO IMAGE FLOAT
+========================================== */
+
+.hero img{
+
+    animation:heroFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ==========================================
+   GOLD PULSE
+========================================== */
+
+.pulse{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:0 0 0 0 rgba(212,175,55,.45);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 25px rgba(212,175,55,0);
+
+    }
+
+}
+
+/* ==========================================
+   SLOW ZOOM BACKGROUND
+========================================== */
+
+.hero video{
+
+    animation:zoomVideo 20s linear infinite alternate;
+
+}
+
+@keyframes zoomVideo{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+/* ==========================================
+   PREMIUM HOVER LIFT
+========================================== */
+
+.hover-lift{
+
+    transition:.45s;
+
+}
+
+.hover-lift:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+
+    0 25px 70px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+   FADE SCALE
+========================================== */
+
+.fade-scale{
+
+    opacity:0;
+
+    transform:scale(.9);
+
+    transition:.8s;
+
+}
+
+.fade-scale.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* ==========================================
+   GOLD ROTATE ICON
+========================================== */
+
+.rotate-icon:hover{
+
+    transform:rotate(360deg);
+
+    transition:.8s;
+
+}
+.hero-tag{
+
+    animation:fadeDown 1.2s ease;
+
+}
+
+.hero-content h1{
+
+    animation:heroTitle 1.6s ease;
+
+}
+
+.hero-content p{
+
+    animation:fadeUp 1.8s ease;
+
+}
+
+.hero-buttons{
+
+    animation:fadeUp 2.2s ease;
+
+}
+
+@keyframes heroTitle{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
