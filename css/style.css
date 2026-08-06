@@ -1,208 +1,162 @@
-/* ==========================================================
-   GOOGLE FONTS
-========================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* ==========================================================
-   ROOT VARIABLES
-========================================================== */
-
-:root{
-
-    --black:#090909;
-    --black2:#111111;
-    --gold:#D4AF37;
-    --white:#ffffff;
-    --grey:#bcbcbc;
-    --light:#f5f5f5;
-
-    --transition:.4s ease;
-
-    --shadow:
-    0 20px 60px rgba(0,0,0,.25);
-
-}
-
-/* ==========================================================
-   RESET
-========================================================== */
+/*==================================================
+RESET
+==================================================*/
 
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
-
 }
 
 html{
-
     scroll-behavior:smooth;
-
+    overflow-x:hidden;
 }
 
 body{
-
-    background:var(--black);
-
-    color:var(--white);
-
     font-family:'Poppins',sans-serif;
-
+    background:#0f0f0f;
+    color:#fff;
     overflow-x:hidden;
-
+    line-height:1.7;
 }
 
 img{
-
-    width:100%;
-
+    max-width:100%;
     display:block;
-
 }
 
 a{
-
     text-decoration:none;
-
+    color:inherit;
 }
 
 ul{
-
     list-style:none;
-
 }
 
 section{
-
-    padding:120px 8%;
-
+    position:relative;
+    padding:110px 0;
 }
 
 .container{
-
-    width:100%;
-
-    max-width:1400px;
-
+    width:min(90%,1400px);
     margin:auto;
+}
+
+/*==================================================
+COLORS
+==================================================*/
+
+:root{
+
+    --gold:#D4AF37;
+
+    --black:#111111;
+
+    --white:#ffffff;
+
+    --light:#f8f8f8;
+
+    --dark:#181818;
+
+    --border:rgba(255,255,255,.08);
+
+    --transition:.4s ease;
 
 }
 
-/* ==========================================================
-   SCROLLBAR
-========================================================== */
+/*==================================================
+COMMON
+==================================================*/
 
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:#111;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:var(--gold);
-
-    border-radius:20px;
-
-}
-
-/* ==========================================================
-   LOADER
-========================================================== */
-
-#loader{
-
-    position:fixed;
-
-    inset:0;
-
-    background:#000;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:99999;
-
-}
-
-.loader-content{
+.section-title{
 
     text-align:center;
 
+    margin-bottom:70px;
+
 }
 
-.loader-content h1{
+.section-title span{
+
+    color:var(--gold);
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+}
+
+.section-title h2{
+
+    margin-top:15px;
 
     font-size:58px;
 
     font-family:'Cormorant Garamond',serif;
 
-    color:var(--gold);
-
-    letter-spacing:5px;
-
 }
 
-.loader-content span{
+.primary-btn{
 
-    color:#aaa;
+    display:inline-flex;
 
-    display:block;
+    align-items:center;
 
-    margin-top:15px;
+    justify-content:center;
 
-}
-
-.loader-line{
-
-    width:300px;
-
-    height:4px;
-
-    background:#222;
-
-    margin-top:35px;
-
-    overflow:hidden;
-
-}
-
-.loader-fill{
-
-    width:0;
-
-    height:100%;
+    padding:16px 42px;
 
     background:var(--gold);
 
-    animation:loading 3s linear forwards;
+    color:#111;
+
+    font-weight:600;
+
+    border-radius:8px;
+
+    transition:var(--transition);
 
 }
 
-@keyframes loading{
+.primary-btn:hover{
 
-    100%{
-
-        width:100%;
-
-    }
+    transform:translateY(-5px);
 
 }
 
-/* ==========================================================
-   NAVBAR
-========================================================== */
+.secondary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 42px;
+
+    border:2px solid white;
+
+    border-radius:8px;
+
+    transition:.4s;
+
+}
+
+.secondary-btn:hover{
+
+    background:white;
+
+    color:#111;
+
+}
+/*==================================================
+NAVBAR
+==================================================*/
 
 header{
 
@@ -214,33 +168,53 @@ header{
 
     left:0;
 
-    z-index:1000;
-
-}
-
-.navbar{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:24px 8%;
+    z-index:9999;
 
     transition:.4s;
 
 }
 
-.logo h2{
+header.scrolled{
 
-    color:var(--gold);
+    background:rgba(0,0,0,.82);
 
-    font-size:38px;
+    backdrop-filter:blur(15px);
 
-    font-family:'Cormorant Garamond',serif;
+}
 
-    font-weight:700;
+.navbar{
+
+    width:min(92%,1400px);
+
+    margin:auto;
+
+    height:95px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    flex-shrink:0;
+
+}
+
+.logo img{
+
+    width:82px;
+
+    height:82px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:2px solid var(--gold);
 
 }
 
@@ -248,17 +222,19 @@ header{
 
     display:flex;
 
-    gap:45px;
+    align-items:center;
+
+    gap:38px;
 
 }
 
 .nav-links a{
 
-    color:white;
-
     font-size:15px;
 
-    transition:.3s;
+    font-weight:500;
+
+    transition:.35s;
 
 }
 
@@ -268,17 +244,31 @@ header{
 
 }
 
+.nav-btn{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
 .book-btn{
 
-    padding:14px 34px;
+    width:62px;
+
+    height:62px;
+
+    border-radius:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     background:var(--gold);
 
     color:#111;
-
-    border-radius:50px;
-
-    font-weight:600;
 
     transition:.4s;
 
@@ -286,21 +276,24 @@ header{
 
 .book-btn:hover{
 
-    transform:translateY(-4px);
-
-    box-shadow:0 15px 35px rgba(212,175,55,.4);
+    transform:scale(1.08);
 
 }
 
-/* ==========================================================
-   HERO
-========================================================== */
+.menu-btn{
+
+    display:none;
+
+}
+/*==================================================
+HERO
+==================================================*/
 
 .hero{
 
-    position:relative;
-
     height:100vh;
+
+    min-height:760px;
 
     display:flex;
 
@@ -310,11 +303,15 @@ header{
 
     overflow:hidden;
 
+    position:relative;
+
 }
 
 .hero video{
 
     position:absolute;
+
+    inset:0;
 
     width:100%;
 
@@ -324,16 +321,13 @@ header{
 
 }
 
-.overlay{
+.hero-overlay{
 
     position:absolute;
 
     inset:0;
 
-    background:linear-gradient(
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.75)
-    );
+    background:rgba(0,0,0,.55);
 
 }
 
@@ -343,47 +337,47 @@ header{
 
     z-index:5;
 
-    text-align:center;
+    width:min(850px,90%);
 
-    max-width:900px;
+    margin:auto;
+
+    text-align:center;
 
 }
 
-.tagline{
+.hero-content span{
+
+    display:block;
 
     color:var(--gold);
 
-    letter-spacing:6px;
+    letter-spacing:8px;
 
-    margin-bottom:25px;
+    font-size:13px;
+
+    margin-bottom:18px;
 
 }
 
 .hero-content h1{
 
-    font-size:88px;
-
     font-family:'Cormorant Garamond',serif;
 
-    line-height:1.1;
+    font-size:92px;
 
-}
+    line-height:1.05;
 
-.hero-content h1 span{
-
-    color:var(--gold);
+    margin-bottom:20px;
 
 }
 
 .hero-content p{
 
-    margin:35px auto;
+    font-size:22px;
 
-    color:#ddd;
+    color:#eee;
 
-    line-height:2;
-
-    max-width:700px;
+    margin-bottom:45px;
 
 }
 
@@ -395,101 +389,16 @@ header{
 
     gap:25px;
 
-}
-
-.primary-btn{
-
-    background:var(--gold);
-
-    color:#111;
-
-    padding:16px 38px;
-
-    border-radius:50px;
-
-    transition:.4s;
+    flex-wrap:wrap;
 
 }
-
-.secondary-btn{
-
-    border:1px solid white;
-
-    color:white;
-
-    padding:16px 38px;
-
-    border-radius:50px;
-
-}
-
-.primary-btn:hover,
-.secondary-btn:hover{
-
-    transform:translateY(-6px);
-
-}
-/* ==========================================================
-   SECTION TITLE
-========================================================== */
-
-.section-title{
-
-    text-align:center;
-
-    margin-bottom:80px;
-
-}
-
-.section-title span{
-
-    color:var(--gold);
-
-    text-transform:uppercase;
-
-    letter-spacing:4px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-}
-
-.section-title h2{
-
-    margin-top:18px;
-
-    font-size:56px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-weight:700;
-
-    line-height:1.2;
-
-}
-
-.section-title p{
-
-    width:700px;
-
-    max-width:100%;
-
-    margin:25px auto 0;
-
-    color:#c7c7c7;
-
-    line-height:1.9;
-
-}
-
-/* ==========================================================
-   ABOUT
-========================================================== */
+/*==================================================
+ABOUT
+==================================================*/
 
 .about{
 
-    background:#0b0b0b;
+    background:#111;
 
 }
 
@@ -513,75 +422,41 @@ header{
 
 .about-image img{
 
-    border-radius:18px;
+    width:100%;
 
-    transition:.5s;
+    border-radius:20px;
 
-}
-
-.about-image:hover img{
-
-    transform:scale(1.03);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
 
 }
 
-.experience-box{
+.about-content span{
 
-    position:absolute;
+    color:var(--gold);
 
-    bottom:30px;
+    letter-spacing:4px;
 
-    right:-40px;
+    text-transform:uppercase;
 
-    width:180px;
-
-    padding:30px;
-
-    background:rgba(212,175,55,.95);
-
-    color:#111;
-
-    border-radius:18px;
-
-    text-align:center;
-
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
-
-}
-
-.experience-box h2{
-
-    font-size:42px;
-
-    margin-bottom:5px;
+    font-size:13px;
 
 }
 
 .about-content h2{
 
-    font-size:60px;
+    margin:20px 0;
 
-    line-height:1.2;
-
-    margin:18px 0 30px;
+    font-size:58px;
 
     font-family:'Cormorant Garamond',serif;
 
 }
 
-.about-content h2 span{
-
-    color:var(--gold);
-
-}
-
 .about-content p{
 
-    color:#cfcfcf;
+    color:#ddd;
 
-    line-height:2;
-
-    margin-bottom:20px;
+    margin-bottom:22px;
 
 }
 
@@ -597,7 +472,7 @@ header{
 
 }
 
-.feature{
+.about-features div{
 
     display:flex;
 
@@ -607,219 +482,20 @@ header{
 
 }
 
-.feature i{
+.about-features i{
 
     color:var(--gold);
 
-    font-size:18px;
+    font-size:20px;
 
 }
-
-/* ==========================================================
-   WHY US
-========================================================== */
-
-.why-us{
-
-    background:#090909;
-
-}
-
-.why-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
-}
-
-.why-card{
-
-    background:#141414;
-
-    padding:45px 35px;
-
-    border-radius:20px;
-
-    transition:.45s;
-
-    border:1px solid rgba(255,255,255,.06);
-
-}
-
-.why-card:hover{
-
-    transform:translateY(-12px);
-
-    border-color:var(--gold);
-
-    box-shadow:0 20px 60px rgba(212,175,55,.12);
-
-}
-
-.why-card i{
-
-    font-size:42px;
-
-    color:var(--gold);
-
-    margin-bottom:28px;
-
-}
-
-.why-card h3{
-
-    font-size:26px;
-
-    margin-bottom:15px;
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-.why-card p{
-
-    color:#bfbfbf;
-
-    line-height:1.8;
-
-}
-
-/* ==========================================================
-   SERVICES
-========================================================== */
-
-.services{
-
-    background:#0d0d0d;
-
-}
-
-.services-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
-}
-
-.service-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    cursor:pointer;
-
-    background:#161616;
-
-    transition:.45s;
-
-}
-
-.service-card img{
-
-    height:280px;
-
-    object-fit:cover;
-
-    transition:.6s;
-
-}
-
-.service-card:hover img{
-
-    transform:scale(1.1);
-
-}
-
-.service-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-
-        transparent,
-
-        rgba(0,0,0,.85)
-
-    );
-
-    z-index:1;
-
-}
-
-.service-content{
-
-    position:absolute;
-
-    left:30px;
-
-    right:30px;
-
-    bottom:25px;
-
-    z-index:2;
-
-}
-
-.service-content i{
-
-    color:var(--gold);
-
-    font-size:30px;
-
-    margin-bottom:15px;
-
-}
-
-.service-content h3{
-
-    font-size:28px;
-
-    margin-bottom:12px;
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-.service-content p{
-
-    color:#d9d9d9;
-
-    line-height:1.7;
-
-    font-size:15px;
-
-}
-
-.service-card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:0 25px 70px rgba(212,175,55,.15);
-
-}
-
-/* ==========================================================
-   STATS
-========================================================== */
+/*==================================================
+STATS
+==================================================*/
 
 .stats{
 
-    background:#101010;
-
-    padding:90px 8%;
+    background:#181818;
 
 }
 
@@ -835,579 +511,198 @@ header{
 
 .stat-card{
 
-    text-align:center;
+    background:#222;
 
-    padding:45px;
+    padding:45px 25px;
 
     border-radius:18px;
 
-    background:#181818;
+    text-align:center;
 
-    border:1px solid rgba(255,255,255,.05);
-
-    transition:.4s;
+    transition:.35s;
 
 }
 
 .stat-card:hover{
 
-    border-color:var(--gold);
-
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
 }
 
 .stat-card h2{
 
-    font-size:54px;
+    font-size:46px;
 
     color:var(--gold);
-
-    font-family:'Cormorant Garamond',serif;
 
 }
 
 .stat-card p{
 
-    margin-top:15px;
+    margin-top:10px;
 
-    color:#d0d0d0;
+    color:#ccc;
+
+}
+/*==================================================
+WHY US
+==================================================*/
+
+.why-us{
+
+    background:#101010;
 
 }
 
-/* ==========================================================
-   BUTTONS
-========================================================== */
-
-.primary-btn{
-
-    display:inline-block;
-
-    background:var(--gold);
-
-    color:#111;
-
-    padding:16px 40px;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    transition:.4s;
-
-}
-
-.primary-btn:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 15px 35px rgba(212,175,55,.35);
-
-}
-
-.secondary-btn{
-
-    display:inline-block;
-
-    border:1px solid rgba(255,255,255,.25);
-
-    color:#fff;
-
-    padding:16px 40px;
-
-    border-radius:50px;
-
-    transition:.4s;
-
-}
-
-.secondary-btn:hover{
-
-    background:#fff;
-
-    color:#111;
-
-}
-/* ==========================================================
-   FEATURED WEDDINGS
-========================================================== */
-
-.featured-weddings{
-
-    background:#070707;
-
-}
-
-.wedding-grid{
+.why-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
 
-    gap:35px;
-
-}
-
-.wedding-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-    height:650px;
-
-    cursor:pointer;
+    gap:28px;
 
 }
 
-.wedding-card img{
+.why-card{
 
-    width:100%;
+    background:#191919;
 
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.8s;
-
-}
-
-.wedding-card:hover img{
-
-    transform:scale(1.12);
-
-}
-
-.wedding-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-
-    transparent,
-
-    rgba(0,0,0,.9)
-
-    );
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    flex-direction:column;
-
-    padding:40px;
-
-}
-
-.wedding-overlay span{
-
-    color:var(--gold);
-
-    letter-spacing:4px;
-
-    margin-bottom:15px;
-
-}
-
-.wedding-overlay h3{
-
-    font-size:40px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    margin-bottom:20px;
-
-}
-
-.wedding-overlay a{
-
-    color:white;
-
-    width:max-content;
-
-    border-bottom:1px solid var(--gold);
-
-    padding-bottom:6px;
-
-}
-
-/* ==========================================================
-   RENTALS
-========================================================== */
-
-.rentals{
-
-    background:#0b0b0b;
-
-}
-
-.rental-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:35px;
-
-}
-
-.rental-card{
-
-    background:#151515;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    transition:.45s;
-
-    border:1px solid rgba(255,255,255,.05);
-
-}
-
-.rental-card:hover{
-
-    transform:translateY(-12px);
-
-    border-color:var(--gold);
-
-}
-
-.rental-card img{
-
-    height:260px;
-
-    object-fit:cover;
-
-}
-
-.rental-content{
-
-    padding:30px;
-
-}
-
-.rental-content h3{
-
-    font-size:32px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    margin-bottom:15px;
-
-}
-
-.rental-content p{
-
-    color:var(--gold);
-
-    font-weight:600;
-
-    margin-bottom:25px;
-
-}
-
-.rental-content a{
-
-    display:inline-block;
-
-    background:var(--gold);
-
-    color:#111;
-
-    padding:14px 30px;
-
-    border-radius:40px;
-
-}
-
-/* ==========================================================
-   GALLERY
-========================================================== */
-
-.gallery{
-
-    background:#090909;
-
-}
-
-.gallery-grid{
-
-    columns:4;
-
-    column-gap:18px;
-
-}
-
-.gallery-grid img{
-
-    width:100%;
-
-    margin-bottom:18px;
+    padding:45px 30px;
 
     border-radius:18px;
 
-    cursor:pointer;
-
-    transition:.5s;
-
-}
-
-.gallery-grid img:hover{
-
-    transform:scale(.97);
-
-    filter:brightness(.75);
-
-}
-
-/* ==========================================================
-   VIDEO
-========================================================== */
-
-.video-showcase{
-
-    position:relative;
-
-    height:90vh;
-
-    overflow:hidden;
-
-}
-
-.video-showcase video{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-.video-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:rgba(0,0,0,.55);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
     text-align:center;
-
-}
-
-.video-overlay h2{
-
-    font-size:75px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    margin-bottom:25px;
-
-}
-
-.video-overlay p{
-
-    color:#ddd;
-
-    margin-bottom:35px;
-
-    font-size:18px;
-
-}
-
-.video-overlay a{
-
-    background:var(--gold);
-
-    color:#111;
-
-    padding:18px 40px;
-
-    border-radius:40px;
-
-}
-
-/* ==========================================================
-   CTA
-========================================================== */
-
-.cta{
-
-    background:
-
-    linear-gradient(
-
-    rgba(0,0,0,.8),
-
-    rgba(0,0,0,.8)
-
-    ),
-
-    url("../images/cta.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-}
-
-.cta-content{
-
-    max-width:850px;
-
-    margin:auto;
-
-    text-align:center;
-
-}
-
-.cta-content span{
-
-    color:var(--gold);
-
-    letter-spacing:5px;
-
-}
-
-.cta-content h2{
-
-    margin:25px 0;
-
-    font-size:72px;
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-.cta-content p{
-
-    color:#ddd;
-
-    line-height:2;
-
-    margin-bottom:40px;
-
-}
-
-/* ==========================================================
-   FLOATING BUTTONS
-========================================================== */
-
-.floating-icons{
-
-    position:fixed;
-
-    right:30px;
-
-    bottom:35px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-    z-index:999;
-
-}
-
-.floating-icons a{
-
-    width:62px;
-
-    height:62px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:var(--gold);
-
-    color:#111;
-
-    border-radius:50%;
-
-    font-size:22px;
 
     transition:.4s;
 
 }
 
-.floating-icons a:hover{
+.why-card:hover{
 
-    transform:translateY(-8px);
-
-    box-shadow:0 18px 45px rgba(212,175,55,.35);
+    transform:translateY(-12px);
 
 }
 
-/* ==========================================================
-   SCROLL INDICATOR
-========================================================== */
+.why-card i{
 
-.scroll-down{
+    font-size:48px;
 
-    position:absolute;
+    color:var(--gold);
 
-    bottom:40px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    color:white;
-
-    animation:scroll 2s infinite;
+    margin-bottom:22px;
 
 }
 
-@keyframes scroll{
+.why-card h3{
 
-    0%{
+    margin-bottom:15px;
 
-        transform:translate(-50%,0);
-
-    }
-
-    50%{
-
-        transform:translate(-50%,12px);
-
-    }
-
-    100%{
-
-        transform:translate(-50%,0);
-
-    }
+    font-size:24px;
 
 }
-/* ==========================================================
-   LUXURY EXPERIENCE
-========================================================== */
 
-.luxury-experience{
+.why-card p{
+
+    color:#ccc;
+
+}
+/*==================================================
+SERVICES
+==================================================*/
+
+.services{
 
     background:#111;
 
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.service-card{
+
+    position:relative;
+
     overflow:hidden;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+.service-card img{
+
+    width:100%;
+
+    height:380px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.service-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.service-content{
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    padding:35px;
+
+    background:linear-gradient(transparent,rgba(0,0,0,.92));
+
+}
+
+.service-content i{
+
+    font-size:36px;
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+
+}
+
+.service-content h3{
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+.service-content p{
+
+    color:#eee;
+
+}
+/*==================================================
+LUXURY EXPERIENCE
+==================================================*/
+
+.luxury-experience{
+
+    background:#181818;
 
 }
 
@@ -1417,169 +712,257 @@ header{
 
     grid-template-columns:1fr 1fr;
 
-    align-items:center;
-
     gap:80px;
+
+    align-items:center;
 
 }
 
 .left-content h2{
 
-    font-size:70px;
-
-    line-height:1.2;
+    font-size:62px;
 
     font-family:'Cormorant Garamond',serif;
 
-    margin:25px 0;
+    margin-bottom:20px;
 
 }
 
 .left-content p{
 
-    color:#cfcfcf;
-
-    line-height:2;
-
-    margin-bottom:40px;
+    color:#ddd;
 
 }
 
-.right-images{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:20px;
-
-}
-
-.right-images img{
+.right-content img{
 
     border-radius:20px;
 
-    transition:.5s;
+}
+/*==================================================
+GALLERY
+==================================================*/
+
+.gallery{
+
+    background:#101010;
 
 }
 
-.right-images img:first-child{
+.gallery-grid{
 
-    grid-column:1/3;
+    display:grid;
 
-    height:400px;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:360px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.gallery-info{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:28px;
+
+    background:linear-gradient(transparent,rgba(0,0,0,.95));
+
+}
+
+.gallery-info h3{
+
+    font-size:26px;
+
+    margin-bottom:8px;
+
+}
+
+.gallery-info span{
+
+    color:var(--gold);
+
+}
+/*==================================================
+COUNTER
+==================================================*/
+
+.counter{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.counter video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
 
     object-fit:cover;
 
 }
 
-.right-images img:nth-child(2),
+.counter::before{
 
-.right-images img:nth-child(3){
+    content:"";
 
-    height:240px;
+    position:absolute;
 
-    object-fit:cover;
+    inset:0;
 
-}
-
-.right-images img:hover{
-
-    transform:scale(1.05);
+    background:rgba(0,0,0,.65);
 
 }
 
-/* ==========================================================
-   PROCESS
-========================================================== */
+.counter .container{
 
-.process{
+    position:relative;
 
-    background:#0a0a0a;
-
-}
-
-.process-grid{
+    z-index:2;
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
-    gap:35px;
+    gap:30px;
 
 }
 
-.process-card{
-
-    background:#171717;
-
-    border-radius:20px;
-
-    padding:40px;
+.counter-box{
 
     text-align:center;
 
-    transition:.4s;
-
-    border:1px solid rgba(255,255,255,.05);
+    padding:40px;
 
 }
 
-.process-card:hover{
+.counter-box h2{
 
-    transform:translateY(-12px);
+    font-size:54px;
 
-    border-color:var(--gold);
-
-}
-
-.number{
-
-    width:70px;
-
-    height:70px;
-
-    margin:auto;
-
-    border-radius:50%;
-
-    background:var(--gold);
-
-    color:#111;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-weight:bold;
-
-    margin-bottom:25px;
+    color:var(--gold);
 
 }
 
-.process-card h3{
+.counter-box p{
 
-    font-size:30px;
+    color:#fff;
 
-    margin-bottom:18px;
+    margin-top:10px;
 
-    font-family:'Cormorant Garamond',serif;
+}
+/*==================================================
+RENTALS
+==================================================*/
+
+.rentals{
+
+    background:#181818;
 
 }
 
-.process-card p{
+.rental-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.rental-card{
+
+    background:#222;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.rental-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.rental-card img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+.rental-content{
+
+    padding:28px;
+
+}
+
+.rental-content h3{
+
+    margin-bottom:12px;
+
+    font-size:26px;
+
+}
+
+.rental-content p{
 
     color:#ccc;
 
-    line-height:1.8;
-
 }
-
-/* ==========================================================
-   TESTIMONIALS
-========================================================== */
+/*==================================================
+TESTIMONIALS
+==================================================*/
 
 .testimonials{
 
@@ -1589,482 +972,246 @@ header{
 
 .testimonial-slider{
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
+    display:flex;
 
     gap:30px;
+
+    overflow-x:auto;
+
+    scroll-behavior:smooth;
+
+}
+
+.testimonial-slider::-webkit-scrollbar{
+
+    display:none;
 
 }
 
 .testimonial-card{
 
-    background:#171717;
+    min-width:360px;
 
-    border-radius:22px;
+    background:#1d1d1d;
 
-    padding:40px;
+    padding:35px;
 
-    text-align:center;
-
-    transition:.4s;
-
-}
-
-.testimonial-card:hover{
-
-    transform:translateY(-10px);
+    border-radius:20px;
 
 }
 
 .testimonial-card img{
 
-    width:110px;
+    width:80px;
 
-    height:110px;
+    height:80px;
 
     border-radius:50%;
 
-    object-fit:cover;
-
-    margin:auto;
-
-    margin-bottom:25px;
-
-    border:4px solid var(--gold);
+    margin-bottom:20px;
 
 }
 
 .testimonial-card h3{
 
-    font-size:28px;
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-.stars{
-
-    color:gold;
-
-    margin:15px 0;
-
-    letter-spacing:3px;
+    margin-bottom:8px;
 
 }
 
 .testimonial-card p{
 
-    color:#d4d4d4;
-
-    line-height:1.9;
+    color:#ddd;
 
 }
+/*==================================================
+CALL TO ACTION
+==================================================*/
 
-/* ==========================================================
-   COUNTER
-========================================================== */
-
-.counter{
-
-    background:#080808;
-
-}
-
-.counter .container{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-}
-
-.counter-box{
-
-    text-align:center;
-
-    padding:45px;
-
-    background:#141414;
-
-    border-radius:18px;
-
-}
-
-.counter-box h2{
-
-    font-size:65px;
-
-    color:var(--gold);
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-.counter-box span{
-
-    color:#d4d4d4;
-
-}
-
-/* ==========================================================
-   PACKAGES
-========================================================== */
-
-.packages{
-
-    background:#0d0d0d;
-
-}
-
-.package-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:35px;
-
-}
-
-.package-card{
+.cta{
 
     position:relative;
 
-    background:#161616;
-
-    border-radius:25px;
-
-    padding:45px;
-
     text-align:center;
 
-    transition:.45s;
-
-    border:1px solid rgba(255,255,255,.05);
+    padding:120px 0;
 
 }
 
-.package-card.active{
+.cta video{
 
-    transform:scale(1.05);
+    position:absolute;
 
-    border:2px solid var(--gold);
+    inset:0;
 
-}
+    width:100%;
 
-.package-card:hover{
+    height:100%;
 
-    transform:translateY(-12px);
-
-}
-
-.package-name{
-
-    color:var(--gold);
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
+    object-fit:cover;
 
 }
 
-.package-card h2{
+.cta::before{
 
-    font-size:60px;
+    content:"";
 
-    margin:30px 0;
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.72);
+
+}
+
+.cta .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.cta h2{
+
+    font-size:58px;
 
     font-family:'Cormorant Garamond',serif;
 
+    margin-bottom:20px;
+
 }
 
-.package-card ul{
+.cta p{
+
+    font-size:20px;
+
+    color:#ddd;
 
     margin-bottom:35px;
 
 }
+/*==================================================
+CONTACT
+==================================================*/
 
-.package-card li{
-
-    margin:16px 0;
-
-    color:#d5d5d5;
-
-}
-
-.package-card a{
-
-    display:inline-block;
-
-    background:var(--gold);
-
-    color:#111;
-
-    padding:16px 35px;
-
-    border-radius:40px;
-
-}
-
-.popular{
-
-    position:absolute;
-
-    top:-15px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    background:var(--gold);
-
-    color:#111;
-
-    padding:8px 20px;
-
-    border-radius:40px;
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-/* ==========================================================
-   FAQ
-========================================================== */
-
-.faq{
-
-    background:#0b0b0b;
-
-}
-
-.faq-container{
-
-    max-width:900px;
-
-    margin:auto;
-
-}
-
-.faq-item{
-
-    margin-bottom:20px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    background:#141414;
-
-}
-
-.faq-question{
-
-    width:100%;
-
-    background:none;
-
-    color:#fff;
-
-    border:none;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:28px;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-}
-
-.faq-answer{
-
-    display:none;
-
-    padding:0 28px 28px;
-
-    color:#cfcfcf;
-
-    line-height:1.8;
-
-}
-
-
-/* ==========================================================
-   BOOKING
-========================================================== */
-
-.booking{
+.contact{
 
     background:#111;
 
 }
 
-.booking .container{
+.contact-grid{
 
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:60px;
+    gap:70px;
 
     align-items:center;
 
 }
 
-.booking-left h2{
+.contact-info h2{
 
-    font-size:62px;
-
-    margin:20px 0;
+    font-size:58px;
 
     font-family:'Cormorant Garamond',serif;
 
-}
-
-.booking-left p{
-
-    color:#d0d0d0;
-
-    line-height:2;
+    margin-bottom:25px;
 
 }
 
-.booking-right form{
+.contact-info p{
 
-    background:#181818;
-
-    padding:45px;
-
-    border-radius:22px;
-
-}
-
-.booking-right input,
-.booking-right textarea,
-.booking-right select{
-
-    width:100%;
-
-    padding:18px;
+    color:#ccc;
 
     margin-bottom:20px;
 
-    background:#0e0e0e;
+}
 
-    border:1px solid #222;
+.contact-info .info-box{
 
-    color:#fff;
+    display:flex;
 
-    border-radius:12px;
+    align-items:center;
 
-    outline:none;
+    gap:18px;
+
+    margin:22px 0;
 
 }
 
-.booking-right input:focus,
-.booking-right textarea:focus,
-.booking-right select:focus{
+.contact-info i{
 
-    border-color:var(--gold);
+    width:55px;
 
-}
+    height:55px;
 
-.booking-right button{
+    display:flex;
 
-    width:100%;
+    justify-content:center;
+
+    align-items:center;
 
     background:var(--gold);
 
     color:#111;
 
-    border:none;
+    border-radius:50%;
 
-    padding:18px;
-
-    border-radius:40px;
-
-    cursor:pointer;
-
-    font-weight:600;
+    font-size:22px;
 
 }
 
+.contact-form{
 
-/* ==========================================================
-   INSTAGRAM
-========================================================== */
+    background:#181818;
 
-.instagram{
+    padding:45px;
 
-    background:#090909;
-
-}
-
-.instagram-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(6,1fr);
-
-    gap:15px;
+    border-radius:20px;
 
 }
 
-.instagram-grid img{
+.contact-form input,
 
-    border-radius:14px;
-
-    cursor:pointer;
-
-    transition:.4s;
-
-}
-
-.instagram-grid img:hover{
-
-    transform:scale(.95);
-
-}
-
-
-/* ==========================================================
-   MAP
-========================================================== */
-
-.map iframe{
+.contact-form textarea{
 
     width:100%;
 
-    height:550px;
+    padding:16px;
+
+    margin-bottom:18px;
 
     border:none;
 
-    filter:grayscale(100%) invert(90%);
+    outline:none;
+
+    background:#222;
+
+    color:white;
+
+    border-radius:10px;
 
 }
 
+.contact-form textarea{
 
-/* ==========================================================
-   FOOTER
-========================================================== */
+    resize:none;
+
+    height:180px;
+
+}
+/*==================================================
+FOOTER
+==================================================*/
 
 footer{
 
-    background:#050505;
+    background:#0b0b0b;
 
-    padding:90px 8% 30px;
+    padding:90px 0 25px;
 
 }
 
@@ -2072,49 +1219,51 @@ footer{
 
     display:grid;
 
-    grid-template-columns:2fr 1fr 1fr 1.5fr;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
     gap:45px;
 
 }
 
+.footer-logo img{
+
+    width:90px;
+
+    border-radius:50%;
+
+}
+
 .footer-about h2{
 
-    color:var(--gold);
-
-    font-size:42px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    margin-bottom:20px;
+    margin:18px 0;
 
 }
 
 .footer-about p{
 
-    color:#c9c9c9;
-
-    line-height:2;
+    color:#aaa;
 
 }
 
 footer h3{
 
-    margin-bottom:25px;
+    margin-bottom:20px;
+
+    color:var(--gold);
 
 }
 
 footer ul li{
 
-    margin:15px 0;
+    margin-bottom:12px;
 
 }
 
 footer ul li a{
 
-    color:#cfcfcf;
+    color:#ccc;
 
-    transition:.3s;
+    transition:.35s;
 
 }
 
@@ -2126,72 +1275,152 @@ footer ul li a:hover{
 
 .footer-bottom{
 
-    margin-top:70px;
+    margin-top:60px;
 
     border-top:1px solid rgba(255,255,255,.08);
 
+    padding-top:20px;
+
     text-align:center;
 
-    padding-top:30px;
+    color:#999;
 
-    color:#9d9d9d;
+}
+/*==================================================
+FLOATING BUTTONS
+==================================================*/
+
+.floating-icons{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    z-index:999;
 
 }
 
+.floating-icons a{
 
-/* ==========================================================
-   HOVER GLOW
-========================================================== */
+    width:58px;
 
-img{
+    height:58px;
 
-    transition:.5s;
+    display:flex;
 
-}
+    justify-content:center;
 
-img:hover{
+    align-items:center;
 
-    filter:brightness(105%);
-
-}
-
-button,
-a{
-
-    transition:.4s;
-
-}
-
-button:hover,
-a:hover{
-
-    opacity:.95;
-
-}
-
-
-/* ==========================================================
-   TEXT SELECTION
-========================================================== */
-
-::selection{
+    border-radius:50%;
 
     background:var(--gold);
 
     color:#111;
 
+    font-size:22px;
+
+    transition:.35s;
+
 }
 
+.floating-icons a:hover{
 
-/* ==========================================================
-   ANIMATION UTILITIES
-========================================================== */
+    transform:translateY(-5px);
+
+}
+/*==================================================
+SCROLL TOP
+==================================================*/
+
+.top-btn{
+
+    position:fixed;
+
+    left:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--gold);
+
+    color:#111;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+/*==================================================
+UTILITY
+==================================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mt-50{
+
+    margin-top:50px;
+
+}
+
+.mb-30{
+
+    margin-bottom:30px;
+
+}
+
+.mb-50{
+
+    margin-bottom:50px;
+
+}
+
+.gold{
+
+    color:var(--gold);
+
+}
 
 .fade-up{
 
     opacity:0;
 
-    transform:translateY(40px);
+    transform:translateY(60px);
 
 }
 
@@ -2215,957 +1444,213 @@ a:hover{
 
     opacity:0;
 
-    transform:scale(.8);
+    transform:scale(.9);
 
 }
+/*==================================================
+PREMIUM HOVER EFFECTS
+==================================================*/
 
+.service-card,
 
-/* ==========================================================
-   SHADOW UTILITIES
-========================================================== */
+.gallery-item,
 
-.shadow{
+.rental-card,
 
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
+.stat-card,
 
-}
-
-.gold-shadow{
-
-    box-shadow:0 20px 60px rgba(212,175,55,.25);
-
-}
-
-
-/* ==========================================================
-   BORDER UTILITIES
-========================================================== */
-
-.border-gold{
-
-    border:1px solid var(--gold);
-
-}
-
-.round{
-
-    border-radius:20px;
-
-}
-
-
-/* ==========================================================
-   SPACING UTILITIES
-========================================================== */
-
-.mt-50{
-
-    margin-top:50px;
-
-}
-
-.mt-100{
-
-    margin-top:100px;
-
-}
-
-.mb-50{
-
-    margin-bottom:50px;
-
-}
-
-.mb-100{
-
-    margin-bottom:100px;
-
-}
-
-/* ==========================================================
-   PREMIUM GLASS EFFECT
-========================================================== */
-
-.glass{
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-}
-
-/* ==========================================================
-   GOLDEN GRADIENT TEXT
-========================================================== */
-
-.gold-text{
-
-    background:linear-gradient(
-        90deg,
-        #fff6d5,
-        #D4AF37,
-        #fff6d5
-    );
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
-}
-
-/* ==========================================================
-   SECTION SUBTITLE
-========================================================== */
-
-.section-subtitle{
-
-    color:var(--gold);
-
-    text-transform:uppercase;
-
-    letter-spacing:6px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-}
-
-/* ==========================================================
-   GOLD BORDER
-========================================================== */
-
-.gold-border{
-
-    position:relative;
-
-}
-
-.gold-border::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-10px;
-
-    width:90px;
-
-    height:3px;
-
-    background:var(--gold);
-
-}
-
-/* ==========================================================
-   IMAGE HOVER
-========================================================== */
-
-.image-box{
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-}
-
-.image-box img{
-
-    transition:.7s;
-
-}
-
-.image-box:hover img{
-
-    transform:scale(1.12) rotate(2deg);
-
-}
-
-/* ==========================================================
-   CARD GLOW
-========================================================== */
-
-.glow-card{
-
-    transition:.45s;
-
-}
-
-.glow-card:hover{
-
-    transform:translateY(-15px);
-
-    box-shadow:
-    0 30px 80px rgba(212,175,55,.18);
-
-}
-
-/* ==========================================================
-   GOLD BUTTON
-========================================================== */
-
-.gold-btn{
-
-    background:linear-gradient(
-        90deg,
-        #b8860b,
-        #D4AF37,
-        #e9c85c
-    );
-
-    color:#111;
-
-    padding:16px 38px;
-
-    border-radius:60px;
-
-    display:inline-block;
-
-    font-weight:600;
-
-    transition:.45s;
-
-}
-
-.gold-btn:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:
-    0 15px 45px rgba(212,175,55,.35);
-
-}
-
-/* ==========================================================
-   DARK SECTION
-========================================================== */
-
-.dark-section{
-
-    background:#080808;
-
-}
-
-/* ==========================================================
-   LIGHT SECTION
-========================================================== */
-
-.light-section{
-
-    background:#111;
-
-}
-
-/* ==========================================================
-   LUXURY DIVIDER
-========================================================== */
-
-.divider{
-
-    width:120px;
-
-    height:2px;
-
-    background:var(--gold);
-
-    margin:30px auto;
-
-}
-
-/* ==========================================================
-   ICON BOX
-========================================================== */
-
-.icon-box{
-
-    width:80px;
-
-    height:80px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#191919;
-
-    border-radius:50%;
-
-    margin:auto;
-
-    color:var(--gold);
-
-    font-size:28px;
+.why-card{
 
     transition:.4s;
 
 }
 
-.icon-box:hover{
+.service-card:hover,
 
-    background:var(--gold);
+.gallery-item:hover,
 
-    color:#111;
+.rental-card:hover,
 
-}
+.stat-card:hover,
 
-/* ==========================================================
-   GOLD SHADOW IMAGE
-========================================================== */
+.why-card:hover{
 
-.shadow-image{
+    transform:translateY(-10px);
 
-    border-radius:24px;
-
-    box-shadow:
-
-    0 20px 80px rgba(212,175,55,.12);
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
 
 }
 
-/* ==========================================================
-   BIG TITLE
-========================================================== */
+button,
 
-.big-title{
+.primary-btn,
 
-    font-size:90px;
+.secondary-btn{
 
-    line-height:1;
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-/* ==========================================================
-   SMALL TITLE
-========================================================== */
-
-.small-title{
-
-    font-size:22px;
-
-    color:#d2d2d2;
-
-}
-
-/* ==========================================================
-   CONTENT WIDTH
-========================================================== */
-
-.content{
-
-    max-width:700px;
-
-}
-
-/* ==========================================================
-   FLEX
-========================================================== */
-
-.flex{
-
-    display:flex;
-
-    align-items:center;
-
-}
-
-.space-between{
-
-    justify-content:space-between;
-
-}
-
-.center{
-
-    justify-content:center;
-
-}
-
-.column{
-
-    flex-direction:column;
-
-}
-
-/* ==========================================================
-   GRID HELPERS
-========================================================== */
-
-.grid-2{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:50px;
-
-}
-
-.grid-3{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:35px;
-
-}
-
-.grid-4{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
-}
-/* ==========================================================
-   PREMIUM NAVBAR
-========================================================== */
-
-header{
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    background:rgba(0,0,0,.08);
-
-    transition:.45s;
-
-}
-
-header.scrolled{
-
-    background:rgba(0,0,0,.92);
-
-    border-bottom:1px solid rgba(212,175,55,.15);
-
-    box-shadow:0 10px 40px rgba(0,0,0,.45);
-
-}
-
-/* ==========================================================
-   HERO OVERLAY
-========================================================== */
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(circle at top right,
-
-    rgba(212,175,55,.20),
-
-    transparent 45%),
-
-    radial-gradient(circle at bottom left,
-
-    rgba(255,255,255,.08),
-
-    transparent 40%);
-
-    z-index:1;
-
-}
-
-/* ==========================================================
-   GOLDEN LIGHT
-========================================================== */
-
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:700px;
-
-    height:700px;
-
-    border-radius:50%;
-
-    background:
-
-    radial-gradient(
-
-        rgba(212,175,55,.12),
-
-        transparent 70%
-
-    );
-
-    top:-250px;
-
-    right:-250px;
-
-    filter:blur(40px);
-
-}
-
-/* ==========================================================
-   PREMIUM CARD
-========================================================== */
-
-.luxury-card{
-
-    position:relative;
-
-    background:#141414;
-
-    border-radius:24px;
-
-    overflow:hidden;
-
-    transition:.45s;
-
-    border:1px solid rgba(255,255,255,.06);
-
-}
-
-.luxury-card:hover{
-
-    transform:translateY(-15px);
-
-    border-color:var(--gold);
-
-}
-
-.luxury-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-
-    130deg,
-
-    transparent,
-
-    rgba(212,175,55,.08),
-
-    transparent
-
-    );
-
-    transform:translateX(-120%);
-
-    transition:.8s;
-
-}
-
-.luxury-card:hover::before{
-
-    transform:translateX(120%);
-
-}
-
-/* ==========================================================
-   PREMIUM BORDER
-========================================================== */
-
-.border-animation{
-
-    position:relative;
-
-}
-
-.border-animation::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:0;
-
-    width:0;
-
-    height:2px;
-
-    background:var(--gold);
-
-    transition:.4s;
-
-}
-
-.border-animation:hover::after{
-
-    left:0;
-
-    width:100%;
-
-}
-
-/* ==========================================================
-   GOLD BADGE
-========================================================== */
-
-.badge{
-
-    display:inline-block;
-
-    padding:10px 22px;
-
-    background:var(--gold);
-
-    color:#111;
-
-    border-radius:40px;
-
-    font-weight:600;
-
-    font-size:13px;
-
-}
-
-/* ==========================================================
-   SECTION BACKGROUND LIGHT
-========================================================== */
-
-.section-light{
-
-    position:relative;
-
-}
-
-.section-light::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:450px;
-
-    height:450px;
-
-    background:
-
-    radial-gradient(
-
-    rgba(212,175,55,.12),
-
-    transparent
-
-    );
-
-    top:-120px;
-
-    left:-120px;
-
-    filter:blur(40px);
-
-}
-
-/* ==========================================================
-   FLOATING CIRCLES
-========================================================== */
-
-.circle{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    background:
-
-    rgba(212,175,55,.08);
-
-    filter:blur(25px);
-
-}
-
-.circle.one{
-
-    width:220px;
-
-    height:220px;
-
-    top:100px;
-
-    left:-80px;
-
-}
-
-.circle.two{
-
-    width:300px;
-
-    height:300px;
-
-    bottom:-100px;
-
-    right:-120px;
-
-}
-
-/* ==========================================================
-   IMAGE SHINE
-========================================================== */
-
-.shine{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.shine::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:60%;
-
-    height:100%;
-
-    background:
-
-    linear-gradient(
-
-    90deg,
-
-    transparent,
-
-    rgba(255,255,255,.35),
-
-    transparent
-
-    );
-
-    transform:skewX(-25deg);
-
-}
-
-.shine:hover::before{
-
-    left:150%;
-
-    transition:1s;
-
-}
-
-/* ==========================================================
-   PREMIUM INPUT
-========================================================== */
-
-input,
-textarea,
-select{
+    cursor:pointer;
 
     transition:.35s;
 
 }
 
-input:hover,
-textarea:hover,
-select:hover{
+button:hover,
 
-    border-color:var(--gold);
+.primary-btn:hover,
 
-}
+.secondary-btn:hover{
 
-/* ==========================================================
-   SOCIAL ICONS
-========================================================== */
-
-.social-icons{
-
-    display:flex;
-
-    gap:18px;
+    transform:translateY(-3px);
 
 }
+/*==================================================
+LOADER
+==================================================*/
 
-.social-icons a{
-
-    width:55px;
-
-    height:55px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#181818;
-
-    color:white;
-
-    transition:.4s;
-
-}
-
-.social-icons a:hover{
-
-    background:var(--gold);
-
-    color:#111;
-
-    transform:translateY(-8px);
-
-}
-
-/* ==========================================================
-   DECORATIVE LINE
-========================================================== */
-
-.line{
-
-    width:80px;
-
-    height:3px;
-
-    background:var(--gold);
-
-    margin:25px 0;
-
-}
-
-/* ==========================================================
-   GOLD BACKGROUND
-========================================================== */
-
-.gold-bg{
-
-    background:
-
-    linear-gradient(
-
-    135deg,
-
-    #b8860b,
-
-    #D4AF37,
-
-    #f3d469
-
-    );
-
-}
-
-/* ==========================================================
-   LUXURY SPACING
-========================================================== */
-
-.py-150{
-
-    padding:150px 0;
-
-}
-
-.py-200{
-
-    padding:200px 0;
-
-}
-/* ACTIVE NAV */
-
-.nav-links a.active{
-
-    color:var(--gold);
-
-}
-
-/* TOP BUTTON */
-
-.top-btn:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:0 15px 40px rgba(212,175,55,.35);
-
-}
-/* ==========================================
-   PROGRESS BAR
-========================================== */
-
-.progress-bar{
+#loader{
 
 position:fixed;
+
 top:0;
+
 left:0;
-height:3px;
-width:0;
-background:#D4AF37;
+
+width:100%;
+
+height:100%;
+
+background:#111;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
 z-index:999999;
 
 }
 
-/* ==========================================
-   CURSOR
-========================================== */
+.loader-circle{
+
+width:80px;
+
+height:80px;
+
+border:5px solid rgba(255,255,255,.2);
+
+border-top:5px solid var(--gold);
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+
+}
+/*==================================================
+CUSTOM CURSOR
+==================================================*/
 
 .cursor{
 
 position:fixed;
+
 width:18px;
+
 height:18px;
-border:2px solid #D4AF37;
+
+border:2px solid var(--gold);
+
 border-radius:50%;
+
 pointer-events:none;
+
 transform:translate(-50%,-50%);
+
 transition:.15s;
+
 z-index:999999;
 
 }
 
 .cursor.active{
 
-width:42px;
-height:42px;
-background:rgba(212,175,55,.15);
+background:var(--gold);
+
+transform:translate(-50%,-50%) scale(1.6);
 
 }
+/*==================================================
+BUTTON RIPPLE
+==================================================*/
 
-/* ==========================================
-   RIPPLE
-========================================== */
+.primary-btn,
 
-button,
-.primary-btn{
+button{
+
+overflow:hidden;
 
 position:relative;
-overflow:hidden;
 
 }
 
 .ripple{
 
 position:absolute;
+
 border-radius:50%;
-background:rgba(255,255,255,.35);
+
+background:rgba(255,255,255,.45);
+
 transform:scale(0);
+
 animation:ripple .6s linear;
+
+}
+/*==================================================
+SCROLL REVEAL
+==================================================*/
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+.fade-left{
+
+opacity:0;
+
+transform:translateX(-60px);
+
+}
+
+.fade-right{
+
+opacity:0;
+
+transform:translateX(60px);
+
+}
+
+.zoom{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+/*==================================================
+KEYFRAMES
+==================================================*/
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
 
 }
 
@@ -3174,2044 +1659,194 @@ animation:ripple .6s linear;
 to{
 
 transform:scale(4);
+
 opacity:0;
 
 }
 
 }
-/* ==========================================================
-   PREMIUM SCROLLBAR
-========================================================== */
 
-::-webkit-scrollbar{
+@keyframes float{
 
-    width:12px;
+0%{
 
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:linear-gradient(
-        #8f6b12,
-        #D4AF37,
-        #f3d97b
-    );
-
-    border-radius:30px;
-
-}
-
-/* ==========================================================
-   PREMIUM SELECTION
-========================================================== */
-
-::selection{
-
-    background:#D4AF37;
-    color:#000;
-
-}
-
-/* ==========================================================
-   SECTION HOVER LIGHT
-========================================================== */
-
-section{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-section::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:350px;
-
-    height:350px;
-
-    border-radius:50%;
-
-    background:rgba(212,175,55,.04);
-
-    filter:blur(80px);
-
-    top:-150px;
-
-    right:-150px;
-
-}
-
-/* ==========================================================
-   PREMIUM IMAGE FRAME
-========================================================== */
-
-.image-frame{
-
-    padding:12px;
-
-    background:#111;
-
-    border:1px solid rgba(212,175,55,.2);
-
-    border-radius:24px;
-
-}
-
-.image-frame img{
-
-    border-radius:18px;
-
-}
-
-/* ==========================================================
-   LUXURY BADGE
-========================================================== */
-
-.luxury-badge{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:10px 22px;
-
-    border:1px solid rgba(212,175,55,.3);
-
-    border-radius:50px;
-
-    color:#D4AF37;
-
-    backdrop-filter:blur(12px);
-
-}
-
-/* ==========================================================
-   PREMIUM TABLE
-========================================================== */
-
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-}
-
-table th{
-
-    background:#181818;
-
-    color:#D4AF37;
-
-    padding:18px;
-
-}
-
-table td{
-
-    padding:18px;
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-}
-
-/* ==========================================================
-   PREMIUM PRICE
-========================================================== */
-
-.price{
-
-    font-size:46px;
-
-    color:#D4AF37;
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-/* ==========================================================
-   TAGS
-========================================================== */
-
-.tag{
-
-    display:inline-block;
-
-    padding:8px 16px;
-
-    background:#1a1a1a;
-
-    color:#fff;
-
-    border-radius:30px;
-
-    margin:5px;
-
-    transition:.3s;
-
-}
-
-.tag:hover{
-
-    background:#D4AF37;
-
-    color:#111;
-
-}
-
-/* ==========================================================
-   GLOW BORDER
-========================================================== */
-
-.glow-border{
-
-    border:1px solid rgba(212,175,55,.2);
-
-    transition:.4s;
-
-}
-
-.glow-border:hover{
-
-    box-shadow:
-
-    0 0 25px rgba(212,175,55,.25);
-
-}
-
-/* ==========================================================
-   PREMIUM HR
-========================================================== */
-
-hr{
-
-    border:none;
-
-    height:1px;
-
-    background:rgba(212,175,55,.15);
-
-    margin:60px 0;
-
-}
-/* ==========================================================
-   PREMIUM SCROLLBAR
-========================================================== */
-
-::-webkit-scrollbar{
-
-    width:12px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:linear-gradient(
-        #8f6b12,
-        #D4AF37,
-        #f3d97b
-    );
-
-    border-radius:30px;
-
-}
-
-/* ==========================================================
-   PREMIUM SELECTION
-========================================================== */
-
-::selection{
-
-    background:#D4AF37;
-    color:#000;
-
-}
-
-/* ==========================================================
-   SECTION HOVER LIGHT
-========================================================== */
-
-section{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-section::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:350px;
-
-    height:350px;
-
-    border-radius:50%;
-
-    background:rgba(212,175,55,.04);
-
-    filter:blur(80px);
-
-    top:-150px;
-
-    right:-150px;
-
-}
-
-/* ==========================================================
-   PREMIUM IMAGE FRAME
-========================================================== */
-
-.image-frame{
-
-    padding:12px;
-
-    background:#111;
-
-    border:1px solid rgba(212,175,55,.2);
-
-    border-radius:24px;
-
-}
-
-.image-frame img{
-
-    border-radius:18px;
-
-}
-
-/* ==========================================================
-   LUXURY BADGE
-========================================================== */
-
-.luxury-badge{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:10px 22px;
-
-    border:1px solid rgba(212,175,55,.3);
-
-    border-radius:50px;
-
-    color:#D4AF37;
-
-    backdrop-filter:blur(12px);
-
-}
-
-/* ==========================================================
-   PREMIUM TABLE
-========================================================== */
-
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-}
-
-table th{
-
-    background:#181818;
-
-    color:#D4AF37;
-
-    padding:18px;
-
-}
-
-table td{
-
-    padding:18px;
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-}
-
-/* ==========================================================
-   PREMIUM PRICE
-========================================================== */
-
-.price{
-
-    font-size:46px;
-
-    color:#D4AF37;
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-/* ==========================================================
-   TAGS
-========================================================== */
-
-.tag{
-
-    display:inline-block;
-
-    padding:8px 16px;
-
-    background:#1a1a1a;
-
-    color:#fff;
-
-    border-radius:30px;
-
-    margin:5px;
-
-    transition:.3s;
-
-}
-
-.tag:hover{
-
-    background:#D4AF37;
-
-    color:#111;
-
-}
-
-/* ==========================================================
-   GLOW BORDER
-========================================================== */
-
-.glow-border{
-
-    border:1px solid rgba(212,175,55,.2);
-
-    transition:.4s;
-
-}
-
-.glow-border:hover{
-
-    box-shadow:
-
-    0 0 25px rgba(212,175,55,.25);
-
-}
-
-/* ==========================================================
-   PREMIUM HR
-========================================================== */
-
-hr{
-
-    border:none;
-
-    height:1px;
-
-    background:rgba(212,175,55,.15);
-
-    margin:60px 0;
-
-}
-/* ==========================================================
-   PREMIUM NAV LINK UNDERLINE
-========================================================== */
-
-.nav-links a{
-
-    position:relative;
-
-}
-
-.nav-links a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:2px;
-
-    background:var(--gold);
-
-    transition:.4s;
-
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after{
-
-    width:100%;
-
-}
-
-/* ==========================================================
-   PREMIUM BUTTON HOVER
-========================================================== */
-
-.primary-btn,
-.gold-btn{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.primary-btn::before,
-.gold-btn::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:60%;
-
-    height:100%;
-
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        transparent,
-
-        rgba(255,255,255,.4),
-
-        transparent
-
-    );
-
-    transform:skewX(-25deg);
-
-    transition:.8s;
-
-}
-
-.primary-btn:hover::before,
-.gold-btn:hover::before{
-
-    left:160%;
-
-}
-
-/* ==========================================================
-   IMAGE OVERLAY
-========================================================== */
-
-.image-overlay{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.image-overlay::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:rgba(0,0,0,.15);
-
-    transition:.4s;
-
-}
-
-.image-overlay:hover::after{
-
-    background:rgba(0,0,0,.35);
-
-}
-
-/* ==========================================================
-   PREMIUM CARD TITLE
-========================================================== */
-
-.card-title{
-
-    font-size:34px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    margin-bottom:18px;
-
-}
-
-.card-desc{
-
-    color:#d0d0d0;
-
-    line-height:1.9;
-
-}
-
-/* ==========================================================
-   PREMIUM SECTION PADDING
-========================================================== */
-
-.py-120{
-
-    padding:120px 0;
-
-}
-
-.py-160{
-
-    padding:160px 0;
-
-}
-
-/* ==========================================================
-   GOLD DOTS
-========================================================== */
-
-.gold-dots{
-
-    display:flex;
-
-    gap:8px;
-
-}
-
-.gold-dots span{
-
-    width:8px;
-
-    height:8px;
-
-    background:var(--gold);
-
-    border-radius:50%;
-
-}
-
-/* ==========================================================
-   PREMIUM BACKGROUND
-========================================================== */
-
-.luxury-bg{
-
-    background:
-    radial-gradient(circle at top left,
-    rgba(212,175,55,.08),
-    transparent 35%),
-
-    radial-gradient(circle at bottom right,
-    rgba(212,175,55,.08),
-    transparent 35%),
-
-    #0b0b0b;
-
-}
-.logo img{
-
-    height:70px;
-
-    width:auto;
-
-    object-fit:contain;
-
-    transition:.4s;
-
-}
-
-.logo img:hover{
-
-    transform:scale(1.05);
-
-}
-/* ==========================================================
-   END
-========================================================== */
-/* ==========================================
-   HERO
-========================================== */
-
-.hero{
-
-    position:relative;
-
-    height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    background:
-
-    linear-gradient(
-
-    rgba(0,0,0,.45),
-
-    rgba(0,0,0,.60)
-
-    ),
-
-    url("../images/hero/hero-bg.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    background-attachment:fixed;
-
-    overflow:hidden;
-
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(
-
-    circle,
-
-    transparent 35%,
-
-    rgba(0,0,0,.25)
-
-    );
-
-}
-
-.hero-content{
-
-    position:relative;
-
-    z-index:10;
-
-    width:900px;
-
-    max-width:90%;
-
-}
-
-.tagline{
-
-    color:#D4AF37;
-
-    letter-spacing:8px;
-
-    text-transform:uppercase;
-
-    font-size:15px;
-
-    margin-bottom:25px;
-
-}
-
-.hero h1{
-
-    font-size:95px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    line-height:1.05;
-
-    color:white;
-
-    margin-bottom:30px;
-
-}
-
-.hero h1 span{
-
-    color:#D4AF37;
-
-}
-
-.hero p{
-
-    font-size:20px;
-
-    color:#f1f1f1;
-
-    line-height:2;
-
-    width:720px;
-
-    max-width:100%;
-
-    margin:auto;
-
-    margin-bottom:45px;
-
-}
-
-.hero-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-}
-
-.primary-btn{
-
-    padding:18px 42px;
-
-}
-
-.secondary-btn{
-
-    padding:18px 42px;
-
-}
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    right:0;
-
-    bottom:0;
-
-    height:220px;
-
-    background:linear-gradient(
-
-        transparent,
-
-        #ffffff
-
-    );
-
-}
-header{
-
-    position:fixed;
-
-    width:100%;
-
-    background:rgba(0,0,0,.18);
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-/*================ HERO =================*/
-
-.hero{
-
-    position:relative;
-
-    width:100%;
-
-    height:100vh;
-
-    overflow:hidden;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.hero-video{
-
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-
-        rgba(0,0,0,.45),
-
-        rgba(0,0,0,.55)
-
-    );
-
-}
-
-.hero-content{
-
-    position:relative;
-
-    z-index:100;
-
-    text-align:center;
-
-    max-width:900px;
-
-    padding:20px;
-
-}
-
-.hero-tag{
-
-    display:block;
-
-    color:#d4af37;
-
-    letter-spacing:10px;
-
-    text-transform:uppercase;
-
-    font-size:14px;
-
-    margin-bottom:25px;
-
-    font-weight:500;
-
-}
-
-.hero-content h1{
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:110px;
-
-    color:#fff;
-
-    line-height:1;
-
-    margin-bottom:25px;
-
-    text-shadow:
-
-    0 8px 35px rgba(0,0,0,.45);
-
-}
-
-.hero-content p{
-
-    font-size:24px;
-
-    color:#f4f4f4;
-
-    letter-spacing:2px;
-
-    margin-bottom:45px;
-
-}
-
-.hero-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-}
-
-.primary-btn{
-
-    background:#d4af37;
-
-    color:#111;
-
-    padding:18px 42px;
-
-    border-radius:6px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    transition:.4s;
-
-}
-
-.primary-btn:hover{
-
-    background:#e4bf48;
-
-    transform:translateY(-5px);
-
-}
-
-.secondary-btn{
-
-    border:2px solid #fff;
-
-    color:#fff;
-
-    padding:18px 42px;
-
-    border-radius:6px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    transition:.4s;
-
-}
-
-.secondary-btn:hover{
-
-    background:#fff;
-
-    color:#111;
-
-}
-
-/* Bottom Fade */
-
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    right:0;
-
-    bottom:0;
-
-    height:220px;
-
-    background:linear-gradient(
-
-        transparent,
-
-        #ffffff
-
-    );
-
-}
-/*================ HERO STATS =================*/
-
-.hero-stats{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:70px;
-
-    margin-top:80px;
-
-}
-
-.hero-stats div{
-
-    text-align:center;
-
-}
-
-.hero-stats h2{
-
-    font-size:42px;
-
-    color:#D4AF37;
-
-    font-family:'Cormorant Garamond',serif;
-
-}
-
-.hero-stats span{
-
-    color:#fff;
-
-    font-size:15px;
-
-    letter-spacing:1px;
-
-}
-
-
-/*================ SCROLL INDICATOR =================*/
-
-.scroll-indicator{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:40px;
-
-    transform:translateX(-50%);
-
-    width:34px;
-
-    height:55px;
-
-    border:2px solid rgba(255,255,255,.5);
-
-    border-radius:40px;
-
-}
-
-.scroll-indicator span{
-
-    position:absolute;
-
-    left:50%;
-
-    top:10px;
-
-    transform:translateX(-50%);
-
-    width:6px;
-
-    height:12px;
-
-    border-radius:20px;
-
-    background:#D4AF37;
-
-    animation:scrollMouse 2s infinite;
-
-}
-
-@keyframes scrollMouse{
-
-    0%{
-
-        opacity:1;
-
-        top:10px;
-
-    }
-
-    100%{
-
-        opacity:0;
-
-        top:30px;
-
-    }
-
-}
-.hero-content h1{
-
-    text-shadow:
-
-    0 5px 15px rgba(0,0,0,.4),
-
-    0 20px 60px rgba(0,0,0,.5);
-
-}
-header{
-
-    position:fixed;
-
-    width:100%;
-
-    z-index:999;
-
-    background:rgba(10,10,10,.18);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-/*================ ABOUT HERO =================*/
-
-.about-hero{
-
-    position:relative;
-
-    width:100%;
-
-    height:100vh;
-
-    overflow:hidden;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-}
-
-.about-video{
-
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-.about-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-
-        rgba(0,0,0,.55),
-
-        rgba(0,0,0,.65)
-
-    );
-
-}
-
-.about-hero .hero-content{
-
-    position:relative;
-
-    z-index:100;
-
-    max-width:900px;
-
-    padding:20px;
-
-}
-
-.about-hero span{
-
-    color:#D4AF37;
-
-    text-transform:uppercase;
-
-    letter-spacing:6px;
-
-    font-size:15px;
-
-}
-
-.about-hero h1{
-
-    font-family:'Cormorant Garamond',serif;
-
-    color:#fff;
-
-    font-size:90px;
-
-    line-height:1.05;
-
-    margin:25px 0;
-
-}
-
-.about-hero p{
-
-    color:#f5f5f5;
-
-    font-size:22px;
-
-    line-height:1.8;
-
-}
-.about-video{
-
-    filter:
-
-    brightness(.55)
-
-    saturate(1.1)
-
-    contrast(1.05);
-
-}
-@media (max-width:991px){
-
-.nav-links{
-
-    position:fixed;
-
-    top:80px;
-
-    left:-100%;
-
-    width:100%;
-
-    height:calc(100vh - 80px);
-
-    background:#000;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-start;
-
-    align-items:center;
-
-    padding-top:50px;
-
-    gap:30px;
-
-    transition:.4s;
-
-}
-
-.nav-links.active{
-
-    left:0;
+transform:translateY(0);
 
 }
 
-.menu-btn{
+50%{
 
-    display:block;
+transform:translateY(-12px);
 
-    color:#fff;
-
-    font-size:28px;
-
-    cursor:pointer;
-
-}
-
-}
-@media(max-width:768px){
-
-.hero-content h1{
-
-font-size:42px;
-
-line-height:1.2;
-
-}
-
-.hero-content p{
-
-font-size:16px;
-
-padding:0 20px;
-
-}
-
-}
-@media(max-width:768px){
-
-.about-container{
-
-display:flex;
-
-flex-direction:column;
-
-}
-
-}
-@media(max-width:768px){
-
-.services-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-.gallery-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-}
-
-@media(max-width:768px){
-
-.gallery-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-@media(max-width:768px){
-
-.counter{
-
-grid-template-columns:1fr;
-
-}
-
-}
-@media(max-width:768px){
-
-.footer-grid{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-}
-img{
-
-max-width:100%;
-
-height:auto;
-
-display:block;
-
-}
-video{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
-.container{
-
-width:90%;
-
-max-width:1400px;
-
-margin:auto;
-
-}
-@media (max-width:991px){
-
-.navbar{
-
-    padding:15px 20px;
-
-}
-
-.logo img{
-
-    width:70px;
-
-}
-
-.nav-links{
-
-    display:none;
-
-}
-
-.menu-btn{
-
-    display:block;
-
-    color:#fff;
-
-    font-size:28px;
-
-}
-
-.book-btn{
-
-    display:none;
-
-}
-
-}
-@media(max-width:768px){
-
-.hero-content{
-
-    width:90%;
-
-    padding:0;
-
-}
-
-.hero-content span{
-
-    font-size:12px;
-
-    letter-spacing:4px;
-
-}
-
-.hero-content h1{
-
-    font-size:48px;
-
-    line-height:1.1;
-
-}
-
-.hero-content p{
-
-    font-size:16px;
-
-    margin:20px 0;
-
-}
-
-}
-@media(max-width:768px){
-
-.hero-buttons{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
-
-}
-
-.hero-buttons a{
-
-    width:100%;
-
-    text-align:center;
-
-}
-
 }
-@media(max-width:768px){
 
-.hero{
+100%{
 
-    min-height:100vh;
+transform:translateY(0);
 
-    padding-top:100px;
-
-}
-}
-.hero video{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-/*==========================================
-LARGE LAPTOP
-==========================================*/
-
-@media (max-width:1200px){
-
-.container{
-
-    width:92%;
-
-}
-
-.hero-content h1{
-
-    font-size:80px;
-
-}
-
-.about-container,
-.behind-scenes .container{
-
-    gap:50px;
-
-}
-
-}
-
-
-
-/*==========================================
-TABLET
-==========================================*/
-
-@media (max-width:991px){
-
-.navbar{
-
-    padding:15px 25px;
-
-}
-
-.logo img{
-
-    width:75px;
-
-}
-
-.nav-links{
-
-    position:fixed;
-
-    top:90px;
-
-    left:-100%;
-
-    width:100%;
-
-    height:calc(100vh - 90px);
-
-    background:#000;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-start;
-
-    align-items:center;
-
-    gap:35px;
-
-    padding-top:60px;
-
-    transition:.4s;
-
-    z-index:999;
-
-}
-
-.nav-links.active{
-
-    left:0;
-
-}
-
-.menu-btn{
-
-    display:block;
-
-    font-size:30px;
-
-    color:#fff;
-
-    cursor:pointer;
-
-}
-
-.book-btn{
-
-    display:none;
-
-}
-
-.hero-content{
-
-    width:90%;
-
-}
-
-.hero-content h1{
-
-    font-size:65px;
-
-}
-
-.hero-buttons{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-.about-container,
-
-.services-grid,
-
-.footer-grid,
-
-.gallery-counter .container{
-
-    grid-template-columns:1fr 1fr;
-
-}
-
-.gallery-grid{
-
-    columns:2;
-
-}
-
-}
-.hero{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:100vh;
-    position:relative;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    width:min(90%,700px);
-    margin:0 auto;
-    text-align:center;
-}
-@media(max-width:768px){
-
-.floating-icons{
-
-    right:15px;
-    bottom:25px;
-    gap:12px;
-
-}
-
-.floating-icons a{
-
-    width:50px;
-    height:50px;
-    font-size:20px;
-
-}
-
-}
-@media(max-width:768px){
-
-.navbar{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-}
-
-.logo{
-
-    flex:1;
-
-}
-
-.nav-btn{
-
-    margin-left:auto;
-    margin-right:18px;
-
-}
-
-.menu-btn{
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-
-}
-
 }
-@media(max-width:768px){
-
-.hero-content h1{
 
-    font-size:56px;
-    line-height:1.1;
-
 }
-
-.hero-content p{
 
-    font-size:18px;
+@keyframes fadeIn{
 
-}
-
-}
-.fade-up,
-.fade-left,
-.fade-right,
-.zoom{
+from{
 
 opacity:0;
 
-transition:.8s ease;
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes slideUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/*==================================================
+FLOAT EFFECT
+==================================================*/
+
+.floating{
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+.hero-content{
+
+animation:fadeIn 1.2s ease;
+
+}
+
+.section-title{
+
+animation:slideUp .8s ease;
+
+}
+/*==================================================
+SELECTION
+==================================================*/
+
+::selection{
+
+background:var(--gold);
+
+color:#111;
+
+}
+/*==================================================
+SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--gold);
+
+border-radius:20px;
+
+}
+/*==================================================
+FINAL
+==================================================*/
+
+.hidden{
+
+display:none;
 
 }
 
 .show{
 
-opacity:1;
-
-transform:translate(0,0) scale(1);
-
-}
-/*==========================================
-BACK TO TOP
-==========================================*/
-
-.top-btn{
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.4s;
+display:block;
 
 }
 
-.top-btn.show{
+.text-gold{
 
-opacity:1;
-
-visibility:visible;
+color:var(--gold);
 
 }
 
+.bg-dark{
 
-/*==========================================
-FAQ
-==========================================*/
-
-.faq-answer{
-
-max-height:0;
-
-overflow:hidden;
-
-transition:.4s;
+background:#111;
 
 }
 
+.bg-light{
 
-/*==========================================
-IMAGE LOAD
-==========================================*/
-
-img{
-
-opacity:.95;
-
-transition:.6s;
+background:#181818;
 
 }
+/* ===========================
+   NAVBAR
+=========================== */
 
-img.loaded{
+header{
 
-opacity:1;
-
-}
-@media (max-width:768px){
-
-.navbar{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:15px;
-
-}
-
-.logo{
-
-    margin-bottom:15px;
-
-}
-
-.nav-links{
-
-    display:flex !important;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    gap:12px 18px;
-
-    position:static;
-    width:100%;
-    height:auto;
-    background:transparent;
-
-}
-
-.nav-links li{
-
-    list-style:none;
-
-}
-
-.nav-links a{
-
-    font-size:15px;
-    padding:6px 10px;
-
-}
-
-.menu-btn{
-
-    display:none;
-
-}
-
-.book-btn{
-
-    display:none;
-
-}
-
-}
-@media (max-width:768px){
-
-.navbar{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    padding:15px 20px;
-
-}
-
-.logo{
-
-    margin-bottom:15px;
-
-}
-
-.logo img{
-
-    width:70px;
-
-}
-
-.nav-links{
-
-    display:flex !important;
-
-    position:static !important;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:12px 20px;
-
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
 
-    height:auto;
+    z-index:9999;
 
-    background:transparent;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
 
-    padding:0;
-
-    margin:0;
-
-}
-
-.nav-links li{
-
-    list-style:none;
+    transition:.4s ease;
 
 }
 
-.nav-links a{
+header.scrolled{
 
-    color:#fff;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
-    font-size:15px;
-
-    font-weight:500;
-
-    padding:6px 10px;
-
-    white-space:nowrap;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
 
 }
+header{
 
-.menu-btn{
+    background:rgba(15,15,15,.28);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-    display:none !important;
-
-}
-
-.nav-btn{
-
-    display:none;
-
-}
-
-}
-@media (max-width:768px){
-
-.nav-links{
-
-    display:flex !important;
-    flex-direction:row !important;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    gap:10px 16px;
-
-    position:static !important;
-    left:0 !important;
-    top:auto !important;
-
-    width:100%;
-    height:auto;
-    background:transparent;
-    padding:0;
-    margin-top:12px;
-
-}
-
-.menu-btn{
-
-    display:none !important;
-
-}
-
-}
-.hero video{
-
-    object-fit:cover;
-    object-position:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
 
 }
