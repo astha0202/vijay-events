@@ -557,3 +557,30 @@ overlay.onclick=()=>overlay.remove();
 });
 
 });
+const items = document.querySelectorAll(".gallery-item");
+
+const image = document.getElementById("featuredImage");
+
+items.forEach(item=>{
+
+    item.addEventListener("mouseenter",()=>{
+
+        document
+        .querySelector(".gallery-item.active")
+        ?.classList.remove("active");
+
+        item.classList.add("active");
+
+        image.style.opacity="0";
+
+        setTimeout(()=>{
+
+            image.src=item.dataset.image;
+
+            image.style.opacity="1";
+
+        },250);
+
+    });
+
+});
