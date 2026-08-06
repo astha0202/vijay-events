@@ -563,3 +563,12 @@ img.style.transition=".8s";
 imgObserver.observe(img);
 
 });
+const menuBtn=document.querySelector(".menu-btn");
+
+const nav=document.querySelector(".nav-links");
+
+menuBtn.onclick=()=>{
+
+nav.classList.toggle("active");
+
+}
