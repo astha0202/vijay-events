@@ -2725,3 +2725,274 @@ max-width:380px;
 }
 
 }
+/*=====================================
+STATS SECTION
+=====================================*/
+
+.stats{
+    padding:100px 8%;
+    background:#111;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    margin-top:60px;
+}
+
+.stat-card{
+    background:#1a1a1a;
+    border:1px solid rgba(212,175,55,.15);
+    border-radius:22px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(212,175,55,.15);
+}
+
+.stat-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+}
+
+.stat-content{
+    padding:28px;
+}
+
+.stat-content h2{
+    color:#D4AF37;
+    font-size:48px;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.stat-content h3{
+    color:#fff;
+    font-size:22px;
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.stat-content p{
+    color:#bdbdbd;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.stats-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.stats{
+    padding:70px 6%;
+}
+
+.stats-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+}
+
+.stat-card img{
+    height:220px;
+}
+
+.stat-content{
+    padding:22px;
+}
+
+.stat-content h2{
+    font-size:40px;
+}
+
+}
+/*=====================================
+STATS
+=====================================*/
+
+.stats{
+    padding:100px 8%;
+    background:#111;
+}
+
+.stats .container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.stat-card{
+    background:#1b1b1b;
+    border:1px solid rgba(212,175,55,.18);
+    border-radius:20px;
+    padding:45px 25px;
+    text-align:center;
+    transition:.4s ease;
+    cursor:pointer;
+}
+
+.stat-card:hover{
+    transform:translateY(-10px);
+    border-color:#D4AF37;
+    box-shadow:0 20px 50px rgba(212,175,55,.18);
+}
+
+.stat-card h2{
+    color:#D4AF37;
+    font-size:58px;
+    font-weight:700;
+    margin-bottom:15px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.stat-card p{
+    color:#fff;
+    font-size:18px;
+    letter-spacing:.5px;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.stats .container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.stats{
+    padding:70px 6%;
+}
+
+.stats .container{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.stat-card{
+    padding:35px 20px;
+}
+
+.stat-card h2{
+    font-size:46px;
+}
+
+.stat-card p{
+    font-size:16px;
+}
+
+}
+/*=====================================
+ABOUT IMAGE
+=====================================*/
+
+.about-image{
+    position:relative;
+    width:100%;
+}
+
+.about-image img{
+    width:100%;
+    display:block;
+    border-radius:28px;
+    object-fit:cover;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.experience-box{
+    position:absolute;
+    bottom:35px;
+    left:35px;
+
+    background:rgba(17,17,17,.92);
+    backdrop-filter:blur(12px);
+
+    padding:25px 35px;
+
+    border-left:5px solid #D4AF37;
+    border-radius:18px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+    transition:.35s;
+}
+
+.experience-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 55px rgba(212,175,55,.25);
+}
+
+.experience-box h2{
+    color:#D4AF37;
+    font-size:56px;
+    line-height:1;
+    margin:0 0 8px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.experience-box p{
+    color:#fff;
+    font-size:17px;
+    margin:0;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.experience-box{
+    left:25px;
+    bottom:25px;
+    padding:20px 28px;
+}
+
+.experience-box h2{
+    font-size:44px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.experience-box{
+    position:static;
+    margin-top:20px;
+    width:100%;
+    text-align:center;
+    border-left:none;
+    border-top:4px solid #D4AF37;
+}
+
+.experience-box h2{
+    font-size:40px;
+}
+
+.experience-box p{
+    font-size:15px;
+}
+
+}
