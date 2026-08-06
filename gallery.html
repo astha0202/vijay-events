@@ -124,131 +124,164 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     </section>
     <section class="gallery-filter">
 
-    <div class="container">
+        <div class="container">
 
-    <button class="active">All</button>
+            <button class="active" data-filter="all">All</button>
 
-    <button>Wedding</button>
+            <button data-filter="wedding">Wedding</button>
 
-    <button>Haldi</button>
+            <button data-filter="haldi">Haldi</button>
 
-    <button>Mehndi</button>
+            <button data-filter="mehndi">Mehndi</button>
 
-    <button>Reception</button>
+            <button data-filter="reception">Reception</button>
 
-    <button>Birthday</button>
+            <button data-filter="birthday">Birthday</button>
 
-    <button>Anniversary</button>
+            <button data-filter="anniversary">Anniversary</button>
 
-    <button>Corporate</button>
+            <button data-filter="corporate">Corporate</button>
 
-    <button>Decoration</button>
+            <button data-filter="decoration">Decoration</button>
 
-    </div>
+        </div>
 
     </section>
     <section class="gallery-page">
 
-    <div class="container">
-
-    <div class="gallery-grid">
-
-    <div class="gallery-item">
-
-    <img
-
-    src="images/loading.jpg"
-
-    data-src="images/gallery/wedding1.jpg"
-
-    loading="lazy"
-
-    alt="">
-
-    <div class="gallery-info">
-
-    <h3>Royal Wedding</h3>
-
-    <span>Delhi</span>
-
-    </div>
-
-    </div>
-
-    <div class="gallery-item">
-
-    <img src="images/gallery/wedding2.jpg">
-
-    <div class="gallery-info">
-
-    <h3>Haldi Ceremony</h3>
-
-    <span>Luxury Decor</span>
-
-    </div>
-
-    </div>
-
-    <div class="gallery-item">
-
-    <img src="images/gallery/wedding4.jpg">
-
-    <div class="gallery-info">
-
-    <h3>Reception</h3>
-
-    <span>Grand Stage</span>
-
-    </div>
-
-    </div>
-
-    <div class="gallery-item">
-
-    <img src="images/gallery/wedding5.jpg">
-
-    <div class="gallery-info">
-
-    <h3>Corporate Event</h3>
-
-    <span>Conference</span>
-
-    </div>
-
-    </div>
-
-    <div class="gallery-item">
-
-    <img src="images/gallery/wedding6.jpg">
-
-    <div class="gallery-info">
-
-    <h3>Anniversary</h3>
-
-    <span>Luxury Setup</span>
-
-    </div>
-
-    </div>
-
-    </div>
-
-    </div>
-
-    </section>
-    <section class="gallery-counter">
-
-        <video autoplay muted loop playsinline class="section-video">
-
-            <source src="videos/counter.mp4" type="video/mp4">
-
-        </video>
-
-        <div class="section-overlay"></div>
-
         <div class="container">
 
-            <!-- Existing Counter -->
+            <div class="gallery-grid">
+
+                <!-- Wedding -->
+
+                <div class="gallery-item" data-category="wedding">
+
+                    <img src="images/gallery/wedding1.jpg" loading="lazy" alt="Royal Wedding">
+
+                    <div class="gallery-info">
+
+                        <h3>Royal Wedding</h3>
+
+                        <span>Delhi</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Haldi -->
+
+                <div class="gallery-item" data-category="haldi">
+
+                    <img src="images/gallery/haldi1.jpg" loading="lazy" alt="Haldi Ceremony">
+
+                    <div class="gallery-info">
+
+                        <h3>Haldi Ceremony</h3>
+
+                        <span>Luxury Decor</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Mehndi -->
+
+                <div class="gallery-item" data-category="mehndi">
+
+                    <img src="images/gallery/mehndi1.jpg" loading="lazy" alt="Mehndi Ceremony">
+
+                    <div class="gallery-info">
+
+                        <h3>Mehndi Ceremony</h3>
+
+                        <span>Floral Theme</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Reception -->
+
+                <div class="gallery-item" data-category="reception">
+
+                    <img src="images/gallery/reception1.jpg" loading="lazy" alt="Reception">
+
+                    <div class="gallery-info">
+
+                        <h3>Reception</h3>
+
+                        <span>Grand Stage</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Corporate -->
+
+                <div class="gallery-item" data-category="corporate">
+
+                    <img src="images/gallery/corporate1.jpg" loading="lazy" alt="Corporate Event">
+
+                    <div class="gallery-info">
+
+                        <h3>Corporate Event</h3>
+
+                        <span>Conference</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Anniversary -->
+
+                <div class="gallery-item" data-category="anniversary">
+
+                    <img src="images/gallery/anniversary1.jpg" loading="lazy" alt="Anniversary">
+
+                    <div class="gallery-info">
+
+                        <h3>Anniversary</h3>
+
+                        <span>Luxury Setup</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Birthday -->
+
+                <div class="gallery-item" data-category="birthday">
+
+                    <img src="images/gallery/birthday1.jpg" loading="lazy" alt="Birthday">
+
+                    <div class="gallery-info">
+
+                        <h3>Birthday Celebration</h3>
+
+                        <span>Theme Party</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Decoration -->
+
+                <div class="gallery-item" data-category="decoration">
+
+                    <img src="images/gallery/decor1.jpg" loading="lazy" alt="Decoration">
+
+                    <div class="gallery-info">
+
+                        <h3>Luxury Decoration</h3>
+
+                        <span>Premium Floral Setup</span>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
