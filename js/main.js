@@ -486,42 +486,12 @@ if (filterBtns.length > 0) {
 CONTACT FORM
 ==========================================*/
 
-const contactForm = document.querySelector("#contactForm");
 
-if (contactForm) {
-
-    contactForm.addEventListener("submit", function(e) {
-
-        e.preventDefault();
-
-        alert("Thank you! We will contact you shortly.");
-
-        this.reset();
-
-    });
-
-}
 
 
 /*==========================================
 BOOKING FORM
 ==========================================*/
-
-const bookingForm = document.querySelector("#bookingForm");
-
-if (bookingForm) {
-
-    bookingForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        alert("Booking request submitted successfully!");
-
-        this.reset();
-
-    });
-
-}
 
 
 /*==========================================

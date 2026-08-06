@@ -5,12 +5,14 @@ import {
 
     db,
     collection,
-    onSnapshot,
     query,
     orderBy,
+    onSnapshot,
+
     doc,
     updateDoc,
     deleteDoc
+
 } from "../js/firebase.js";
 
 /*==========================================
@@ -35,15 +37,15 @@ onAuthStateChanged(auth,(user)=>{
 LOGOUT
 ==========================================*/
 
-document.getElementById("logoutBtn")
+const logoutBtn=document.getElementById("logoutBtn");
 
-.addEventListener("click",async()=>{
+logoutBtn.onclick=async()=>{
 
     await signOut(auth);
 
     window.location.href="../login.html";
 
-});
+};
 
 /*==========================================
 SIDEBAR
@@ -71,14 +73,14 @@ menuItems.forEach(item=>{
 
         .classList.add("active");
 
-        pageTitle.textContent=item.textContent.trim();
+        pageTitle.textContent=item.innerText.trim();
 
     };
 
 });
 
 /*==========================================
-LOAD DASHBOARD
+LOAD
 ==========================================*/
 
 function loadDashboard(){
@@ -87,23 +89,46 @@ function loadDashboard(){
 
     loadReviews();
 
+    loadMessages();
+
 }
 
+/*==========================================
+BOOKING COUNTERS
+==========================================*/
+
+const totalBookings=document.getElementById("totalBookings");
+
+const pendingBookings=document.getElementById("pendingBookings");
+
+const bookingTable=document.getElementById("bookingTable");
+
+const recentBookings=document.getElementById("recentBookings");
+
+/*==========================================
+REVIEW COUNTERS
+==========================================*/
+
+const totalReviews=document.getElementById("totalReviews");
+
+const avgRating=document.getElementById("avgRating");
+
+const reviewTable=document.getElementById("reviewTable");
+
+const recentReviews=document.getElementById("recentReviews");
+
+/*==========================================
+MESSAGE AREA
+==========================================*/
+
+const messagesContainer=document.getElementById("messagesContainer");
 /*==========================================
 BOOKINGS
 ==========================================*/
 
 function loadBookings(){
 
-
-    const recentBookings=document.getElementById("recentBookings");
-    const bookingTable=document.getElementById("bookingTable");
-
-    const totalBookings=document.getElementById("totalBookings");
-
-    const pendingBookings=document.getElementById("pendingBookings");
-
-    const bookingQuery=query(
+    const bookingQuery = query(
 
         collection(db,"bookings"),
 
@@ -121,21 +146,39 @@ function loadBookings(){
 
         let pending=0;
 
-        snapshot.forEach(doc=>{
+        if(snapshot.empty){
 
-            recentBookings.innerHTML += `
+            bookingTable.innerHTML=`
+                <div class="data-box">
+                    <h3>No Bookings Found</h3>
+                </div>
+            `;
+
+            return;
+
+        }
+
+        snapshot.forEach(documentSnapshot=>{
+
+            const b=documentSnapshot.data();
+
+            if(b.status==="Pending") pending++;
+
+            /*============ RECENT BOOKINGS ============*/
+
+            recentBookings.innerHTML+=`
 
 <div class="recent-item">
 
-<h4>${b.customerName}</h4>
+<h4>${b.customerName || "Customer"}</h4>
 
 <p>
 
-${b.eventType}
+${b.eventType || "-"}
 
 •
 
-${b.eventDate}
+${b.eventDate || "-"}
 
 </p>
 
@@ -143,82 +186,134 @@ ${b.eventDate}
 
 `;
 
-            const b=doc.data();
+            /*============ BOOKING CARD ============*/
 
-            if(b.status==="Pending") pending++;
-
-            bookingTable.innerHTML += `
+            bookingTable.innerHTML+=`
 
 <div class="data-box">
 
-<h3>👤 ${b.customerName}</h3>
+<h3>👤 ${b.customerName || "-"}</h3>
 
 <p><strong>📞 Phone:</strong> ${b.customerPhone || "-"}</p>
 
 <p><strong>📧 Email:</strong> ${b.customerEmail || "-"}</p>
 
-<p><strong>🆔 Booking ID:</strong> ${b.bookingId}</p>
+<p><strong>🆔 Booking ID:</strong> ${b.bookingId || "-"}</p>
 
-<p><strong>🎉 Event:</strong> ${b.eventType}</p>
+<p><strong>🎉 Event:</strong> ${b.eventType || "-"}</p>
 
-<p><strong>📅 Event Date:</strong> ${b.eventDate}</p>
+<p><strong>📅 Date:</strong> ${b.eventDate || "-"}</p>
 
 <p><strong>📍 Venue:</strong> ${b.venue || "-"}</p>
 
-<p><strong>💰 Budget:</strong> ₹${b.budget || 0}</p>
+<p><strong>💰 Budget:</strong> ₹${b.budget || "-"}</p>
 
-<p><strong>📝 Message:</strong> ${b.message || "No message provided"}</p>
+<p><strong>📝 Message:</strong> ${b.message || "-"}</p>
 
-<p><strong>📌 Status:</strong>
+<p>
+
+<strong>Status:</strong>
+
 <span style="
 padding:6px 12px;
 border-radius:20px;
-font-weight:600;
-background:${
-    b.status==="Confirmed"
-    ?"#22C55E"
-    :b.status==="Cancelled"
-    ?"#EF4444"
-    :"#F59E0B"
+color:#fff;
+background:
+
+${
+
+b.status==="Confirmed"
+
+?
+
+"#22C55E"
+
+:
+
+b.status==="Cancelled"
+
+?
+
+"#EF4444"
+
+:
+
+"#F59E0B"
+
 };
-color:#fff;">
-${b.status}
+
+">
+
+${b.status || "Pending"}
+
 </span>
+
 </p>
 
 <div class="action-buttons">
 
-<a href="tel:${b.customerPhone}">
+<a href="tel:${b.customerPhone || ""}">
+
 <button class="confirm">
+
 📞 Call
+
 </button>
+
 </a>
 
-<a href="https://wa.me/91${b.customerPhone}" target="_blank">
+<a
+
+href="https://wa.me/91${b.customerPhone || ""}"
+
+target="_blank">
+
 <button class="reply">
+
 💬 WhatsApp
+
 </button>
+
 </a>
 
-<a href="mailto:${b.customerEmail}">
+<a href="mailto:${b.customerEmail || ""}">
+
 <button class="verify">
+
 📧 Email
+
 </button>
+
 </a>
 
-<button class="confirm confirm-booking"
-data-id="${doc.id}">
+<button
+
+class="confirm confirm-booking"
+
+data-id="${documentSnapshot.id}">
+
 ✅ Confirm
+
 </button>
 
-<button class="cancel cancel-booking"
-data-id="${doc.id}">
+<button
+
+class="cancel cancel-booking"
+
+data-id="${documentSnapshot.id}">
+
 ❌ Cancel
+
 </button>
 
-<button class="delete delete-booking"
-data-id="${doc.id}">
+<button
+
+class="delete delete-booking"
+
+data-id="${documentSnapshot.id}">
+
 🗑 Delete
+
 </button>
 
 </div>
@@ -236,20 +331,67 @@ data-id="${doc.id}">
 }
 
 /*==========================================
+BOOKING ACTIONS
+==========================================*/
+
+document.addEventListener("click",async(e)=>{
+
+    const id=e.target.dataset.id;
+
+    if(!id) return;
+
+    if(e.target.classList.contains("confirm-booking")){
+
+        await updateDoc(
+
+            doc(db,"bookings",id),
+
+            {
+
+                status:"Confirmed"
+
+            }
+
+        );
+
+    }
+
+    if(e.target.classList.contains("cancel-booking")){
+
+        await updateDoc(
+
+            doc(db,"bookings",id),
+
+            {
+
+                status:"Cancelled"
+
+            }
+
+        );
+
+    }
+
+    if(e.target.classList.contains("delete-booking")){
+
+        if(!confirm("Delete this booking?")) return;
+
+        await deleteDoc(
+
+            doc(db,"bookings",id)
+
+        );
+
+    }
+
+});
+/*==========================================
 REVIEWS
 ==========================================*/
 
 function loadReviews(){
 
-    const reviewTable = document.getElementById("reviewTable");
-
-    const recentReviews = document.getElementById("recentReviews");
-
-    const totalReviews = document.getElementById("totalReviews");
-
-    const avgRating = document.getElementById("avgRating");
-
-    const reviewQuery = query(
+    const reviewQuery=query(
 
         collection(db,"reviews"),
 
@@ -259,23 +401,58 @@ function loadReviews(){
 
     onSnapshot(reviewQuery,(snapshot)=>{
 
-        reviewTable.innerHTML = "";
+        reviewTable.innerHTML="";
 
-        recentReviews.innerHTML = "";
+        recentReviews.innerHTML="";
 
-        totalReviews.textContent = snapshot.size;
+        totalReviews.textContent=snapshot.size;
 
-        let total = 0;
+        let total=0;
 
-        snapshot.forEach(doc=>{
+        if(snapshot.empty){
 
-            const r = doc.data();
+            reviewTable.innerHTML=`
+            <div class="data-box">
+                <h3>No Reviews Yet</h3>
+            </div>`;
 
-            total += Number(r.rating) || 0;
+            avgRating.textContent="0.0";
 
-            // ===== Dashboard Review Card =====
+            return;
 
-            reviewTable.innerHTML += `
+        }
+
+        snapshot.forEach(documentSnapshot=>{
+
+            const r=documentSnapshot.data();
+
+            total+=Number(r.rating)||0;
+
+            /*======== RECENT ========*/
+
+            recentReviews.innerHTML+=`
+
+<div class="recent-item">
+
+<h4>${r.name}</h4>
+
+<p>
+
+⭐ ${r.rating}
+
+•
+
+${r.event}
+
+</p>
+
+</div>
+
+`;
+
+            /*======== REVIEW CARD ========*/
+
+            reviewTable.innerHTML+=`
 
 <div class="data-box">
 
@@ -287,37 +464,38 @@ function loadReviews(){
 
 <p><strong>💬 Review:</strong> ${r.review}</p>
 
-<p><strong>✅ Verified:</strong> ${r.verified ? "Yes" : "No"}</p>
+<p>
+
+<strong>Verified:</strong>
+
+${r.verified ? "✅ Yes" : "❌ No"}
+
+</p>
 
 ${
 r.ownerReply
 ?
 
-`<p><strong>🏢 Owner Reply:</strong> ${r.ownerReply}</p>`
+`<p><strong>Owner Reply:</strong> ${r.ownerReply}</p>`
 
 :
 
 ""
-
 }
 
+<div class="action-buttons">
+
+<button
+
+class="delete delete-review"
+
+data-id="${documentSnapshot.id}">
+
+🗑 Delete
+
+</button>
+
 </div>
-
-`;
-
-            // ===== Recent Reviews Panel =====
-
-            recentReviews.innerHTML += `
-
-<div class="recent-item">
-
-<h4>${r.name}</h4>
-
-<p>
-
-⭐ ${r.rating} • ${r.event}
-
-</p>
 
 </div>
 
@@ -325,48 +503,157 @@ r.ownerReply
 
         });
 
-        avgRating.textContent =
-
-            snapshot.size
-
-            ?
-
-            (total / snapshot.size).toFixed(1)
-
-            :
-
-            "0.0";
+        avgRating.textContent=(total/snapshot.size).toFixed(1);
 
     });
 
 }
-document.addEventListener("click", async (e) => {
 
-    const id = e.target.dataset.id;
+/*==========================================
+MESSAGES
+==========================================*/
 
-    if (!id) return;
+function loadMessages(){
 
-    if (e.target.classList.contains("confirm-booking")) {
+    const messageQuery=query(
 
-        await updateDoc(doc(db, "bookings", id), {
-            status: "Confirmed"
+        collection(db,"contactMessages"),
+
+        orderBy("created","desc")
+
+    );
+
+    onSnapshot(messageQuery,(snapshot)=>{
+
+        messagesContainer.innerHTML="";
+
+        if(snapshot.empty){
+
+            messagesContainer.innerHTML=`
+
+<div class="data-box">
+
+<h3>No Messages Yet</h3>
+
+</div>
+
+`;
+
+            return;
+
+        }
+
+        snapshot.forEach(documentSnapshot=>{
+
+            const m=documentSnapshot.data();
+
+            messagesContainer.innerHTML+=`
+
+<div class="data-box">
+
+<h3>👤 ${m.name}</h3>
+
+<p><strong>📞 Phone:</strong> ${m.phone}</p>
+
+<p><strong>📧 Email:</strong> ${m.email}</p>
+
+<p><strong>🎉 Event:</strong> ${m.event}</p>
+
+<p><strong>📅 Date:</strong> ${m.date}</p>
+
+<p><strong>📝 Message:</strong></p>
+
+<p>${m.message}</p>
+
+<div class="action-buttons">
+
+<a href="tel:${m.phone}">
+
+<button class="confirm">
+
+📞 Call
+
+</button>
+
+</a>
+
+<a
+
+href="https://wa.me/91${m.phone}"
+
+target="_blank">
+
+<button class="reply">
+
+💬 WhatsApp
+
+</button>
+
+</a>
+
+<a href="mailto:${m.email}">
+
+<button class="verify">
+
+📧 Email
+
+</button>
+
+</a>
+
+<button
+
+class="delete delete-message"
+
+data-id="${documentSnapshot.id}">
+
+🗑 Delete
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
         });
+
+    });
+
+}
+
+/*==========================================
+DELETE REVIEW / MESSAGE
+==========================================*/
+
+document.addEventListener("click",async(e)=>{
+
+    const id=e.target.dataset.id;
+
+    if(!id) return;
+
+    if(e.target.classList.contains("delete-review")){
+
+        if(!confirm("Delete this review?")) return;
+
+        await deleteDoc(
+
+            doc(db,"reviews",id)
+
+        );
 
     }
 
-    if (e.target.classList.contains("cancel-booking")) {
+    if(e.target.classList.contains("delete-message")){
 
-        await updateDoc(doc(db, "bookings", id), {
-            status: "Cancelled"
-        });
+        if(!confirm("Delete this inquiry?")) return;
 
-    }
+        await deleteDoc(
 
-    if (e.target.classList.contains("delete-booking")) {
+            doc(db,"contactMessages",id)
 
-        if (!confirm("Delete this booking?")) return;
-
-        await deleteDoc(doc(db, "bookings", id));
+        );
 
     }
 

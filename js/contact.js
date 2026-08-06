@@ -1,10 +1,10 @@
+console.log("contact.js loaded");
 import {
     db,
     collection,
     addDoc,
     serverTimestamp
 } from "./firebase.js";
-
 const form = document.getElementById("contactForm");
 const btn = document.getElementById("contactBtn");
 
@@ -20,6 +20,7 @@ form.addEventListener("submit", async (e) => {
     `;
 
     try {
+        console.log("Submitting contact form...");
 
         await addDoc(
             collection(db, "contactMessages"),
@@ -31,9 +32,9 @@ form.addEventListener("submit", async (e) => {
 
                 phone: document.getElementById("phone").value,
 
-                event: document.getElementById("event").value,
+                event: document.getElementById("eventType").value,
 
-                date: document.getElementById("date").value,
+                date: document.getElementById("eventDate").value,
 
                 message: document.getElementById("message").value,
 
@@ -53,7 +54,12 @@ form.addEventListener("submit", async (e) => {
             Send Inquiry
         `;
 
-        alert("✅ Inquiry sent successfully! We'll contact you soon.");
+    Swal.fire({
+        icon: "success",
+        title: "Inquiry Sent!",
+        text: "We'll contact you shortly.",
+        confirmButtonColor: "#D4AF37"
+    });
 
     } catch (err) {
 
@@ -66,7 +72,14 @@ form.addEventListener("submit", async (e) => {
             Send Inquiry
         `;
 
-        alert("❌ Failed to send inquiry.");
+
+
+    Swal.fire({
+        icon: "error",
+        title: "Firebase Error",
+        text: err.message,
+        confirmButtonColor: "#D4AF37"
+    });
 
     }
 
