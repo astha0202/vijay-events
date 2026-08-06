@@ -418,3 +418,170 @@ section{
 }
 
 }
+/*==========================================
+MOBILE
+==========================================*/
+
+@media (max-width:768px){
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+.container{
+
+    width:92%;
+
+}
+
+.logo img{
+
+    width:60px;
+
+}
+
+.hero{
+
+    min-height:100vh;
+
+    padding-top:90px;
+
+}
+
+.hero-content{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.hero-content span{
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+}
+
+.hero-content h1{
+
+    font-size:42px;
+
+    line-height:1.15;
+
+}
+
+.hero-content p{
+
+    font-size:16px;
+
+    margin:20px auto;
+
+    max-width:90%;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    width:100%;
+
+}
+
+.hero-buttons a{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.about-container,
+
+.services-grid,
+
+.footer-grid,
+
+.gallery-counter .container,
+
+.album-grid,
+
+.instagram-grid,
+
+.why-grid,
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+}
+
+.gallery-grid{
+
+    columns:1;
+
+}
+
+.gallery-item{
+
+    margin-bottom:20px;
+
+}
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+video{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.section-title h2{
+
+    font-size:36px;
+
+}
+
+.about-content h2,
+
+.behind-scenes h2,
+
+.gallery-cta h2{
+
+    font-size:38px;
+
+}
+
+.footer{
+
+    text-align:center;
+
+}
+
+.footer-grid{
+
+    gap:40px;
+
+}
+
+}
