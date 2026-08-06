@@ -239,24 +239,32 @@ Monday - Sunday<br>
 
 <div class="contact-form">
 
-<form>
+<form id="contactForm">
 
 <input
 type="text"
+id="name"
 placeholder="Your Full Name"
 required>
 
 <input
 type="email"
+id="email"
 placeholder="Email Address"
 required>
 
 <input
 type="tel"
+id="phone"
 placeholder="Phone Number"
 required>
 
-<select required>
+<input
+type="date"
+id="eventDate"
+required>
+
+<select id="eventType" required>
 
 <option value="">
 
@@ -319,18 +327,18 @@ type="date"
 required>
 
 <textarea
-
+id="message"
 placeholder="Tell us about your event..."
-
 rows="6"
-
 required>
-
 </textarea>
 
 <button
+id="contactBtn"
 type="submit"
 class="primary-btn">
+
+<i class="fa-solid fa-paper-plane"></i>
 
 Send Inquiry
 
@@ -683,6 +691,7 @@ WhatsApp
     </footer>
 
 <script src="js/main.js"></script>
+<script type="module" src="js/contact.js"></script>
 
 </body>
 
