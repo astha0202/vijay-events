@@ -1,5 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
+/*==============================
+FIRESTORE
+==============================*/
+
 import {
     getFirestore,
     collection,
@@ -14,12 +18,31 @@ import {
     deleteDoc
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
+/*==============================
+AUTHENTICATION
+==============================*/
+
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
+/*==============================
+STORAGE
+==============================*/
+
 import {
     getStorage,
     ref,
     uploadBytes,
     getDownloadURL
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-storage.js";
+
+/*==============================
+CONFIG
+==============================*/
 
 const firebaseConfig = {
 
@@ -37,34 +60,49 @@ const firebaseConfig = {
 
 };
 
+/*==============================
+INITIALIZE
+==============================*/
+
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
 const storage = getStorage(app);
 
+const auth = getAuth(app);
+
+/*==============================
+EXPORTS
+==============================*/
+
 export {
 
+    // Firebase Services
     db,
     storage,
+    auth,
 
+    // Firestore
     collection,
     addDoc,
-
     serverTimestamp,
-
     onSnapshot,
-
     query,
     orderBy,
-
     doc,
     updateDoc,
     increment,
     deleteDoc,
 
+    // Storage
     ref,
     uploadBytes,
-    getDownloadURL
+    getDownloadURL,
+
+    // Authentication
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
 
 };
