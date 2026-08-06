@@ -1935,3 +1935,67 @@ FAQ
 .faq-item.active .faq-question i{
     transform:rotate(45deg);
 }
+/*==========================
+INSTAGRAM
+==========================*/
+
+.instagram{
+    padding:120px 0;
+    background:#0f0f0f;
+}
+
+.instagram-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-top:60px;
+
+}
+
+.instagram-grid img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.45s;
+
+    border:2px solid transparent;
+
+}
+
+.instagram-grid img:hover{
+
+    transform:scale(1.05);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.25);
+
+}
+
+@media(max-width:768px){
+
+.instagram-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.instagram-grid img{
+
+height:260px;
+
+}
+
+}

@@ -307,27 +307,17 @@ if (progressBar) {
 /*==========================================
 FAQ
 ==========================================*/
+/*==========================
+FAQ
+==========================*/
 
-const faqQuestions = document.querySelectorAll(".faq-question");
+document.querySelectorAll(".faq-question").forEach(button=>{
 
-faqQuestions.forEach(question => {
+    button.addEventListener("click",()=>{
 
-    question.addEventListener("click", () => {
+        const item=button.parentElement;
 
-        const answer = question.nextElementSibling;
-
-        question.classList.toggle("active");
-
-        if (answer.style.maxHeight) {
-
-            answer.style.maxHeight = null;
-
-        } else {
-
-            answer.style.maxHeight =
-                answer.scrollHeight + "px";
-
-        }
+        item.classList.toggle("active");
 
     });
 
@@ -574,3 +564,26 @@ if (year) {
     year.textContent = new Date().getFullYear();
 
 }
+/*==========================
+IMAGE LIGHTBOX
+==========================*/
+
+document.querySelectorAll(".instagram-grid img").forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+const overlay=document.createElement("div");
+
+overlay.className="lightbox";
+
+overlay.innerHTML=`
+<img src="${img.src}">
+`;
+
+document.body.appendChild(overlay);
+
+overlay.onclick=()=>overlay.remove();
+
+});
+
+});
