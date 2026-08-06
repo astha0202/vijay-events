@@ -97,11 +97,8 @@ FILTER
 ======================================*/
 
 .gallery-filter{
-
     padding:80px 0 40px;
-
-    background:#fff;
-
+    background:#111;
 }
 
 .gallery-filter .container{
@@ -156,11 +153,8 @@ GALLERY GRID
 ======================================*/
 
 .gallery-page{
-
     padding:40px 8% 120px;
-
-    background:#fff;
-
+    background:#111;
 }
 
 .gallery-grid{
@@ -289,11 +283,7 @@ FEATURED ALBUMS
 ======================================*/
 
 .featured-albums{
-
-    padding:120px 8%;
-
-    background:#f8f8f8;
-
+    background:#111;
 }
 
 .album-grid{
@@ -384,11 +374,7 @@ BEHIND THE SCENES
 ======================================*/
 
 .behind-scenes{
-
-    padding:130px 8%;
-
-    background:#fff;
-
+    background:#111;
 }
 
 .behind-scenes .container{
@@ -911,5 +897,109 @@ letter-spacing:2px;
     position:relative;
 
     z-index:2;
+
+}
+.gallery-filter{
+
+    padding:70px 8% 50px;
+    background:#111;
+
+}
+
+.gallery-filter .container{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
+
+}
+
+.gallery-filter button{
+
+    padding:14px 32px;
+
+    min-width:135px;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    border-radius:50px;
+
+    background:#1c1c1c;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+.gallery-filter button:hover{
+
+    background:#D4AF37;
+
+    color:#111;
+
+    border-color:#D4AF37;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 30px rgba(212,175,55,.35);
+
+}
+
+.gallery-filter button.active{
+
+    background:linear-gradient(135deg,#D4AF37,#b88b17);
+
+    color:#111;
+
+    font-weight:600;
+
+    border-color:#D4AF37;
+
+    box-shadow:0 10px 30px rgba(212,175,55,.35);
+
+}
+@media(max-width:768px){
+
+.gallery-filter{
+
+padding:45px 20px 30px;
+
+}
+
+.gallery-filter .container{
+
+justify-content:flex-start;
+overflow-x:auto;
+flex-wrap:nowrap;
+padding-bottom:10px;
+
+scrollbar-width:none;
+
+}
+
+.gallery-filter .container::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.gallery-filter button{
+
+min-width:120px;
+padding:12px 24px;
+font-size:14px;
+
+}
 
 }
